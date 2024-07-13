@@ -136,9 +136,7 @@ The game progresses through different phases based on the number of turns elapse
 | Piercing Cannon   | 25    | 10     | Attacks closest 5 titans to the wall     |
 | Sniper Cannon     | 25    | 35     | Attacks the first closest titan to wall  |
 | Volley Spread Cannon | 100 | 5      | Attacks all titans between min and max range |
-| Wall Spread Cannon| 20    | 50     | Attacks all titans in the lane           |
 | Wall Trap         | 75    | 100    | Attacks a titan that reached the walls   |
-| Proximity Trap    | -     | -      | Attacks titans near the trap location    |
 
 ### Game Rules
 
