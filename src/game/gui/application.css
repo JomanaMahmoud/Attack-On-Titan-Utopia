@@ -1,0 +1,16 @@
+/* Style for the button */
+.button {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #1ec279; /* Border color (adjust as needed) */
+    border-radius: 5px; /* Rounded corners */
+    padding: 7px 20px; /* Padding around the text */
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Font family */
+    transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
+}
+
+/* Glow effect on hover */
+.button:hover {
+    box-shadow: 0 0 10px rgba(30, 194, 121, 0.7); /* Green glow effect */
+}
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="InspectionProjectProfileManager">
+    <profile version="1.0">
+      <option name="myName" value="Project Default" />
+    </profile>
+    <version value="1.0" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/M2 Solution.iml" filepath="$PROJECT_DIR$/M2 Solution.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="javaFX-22">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx-swt.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.base.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.controls.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.fxml.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.graphics.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.media.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.swing.jar!/" />
+        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.web.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
+</project>
