@@ -1,5 +1,24 @@
 # Attack On Titan: Utopia
 
+## Project Description
+**Attack On Titan: Utopia** is a one-player, endless tower defense game inspired by the hit anime *Attack on Titan*. The game is set in the Utopia District of Wall Rose, where players must defend against waves of titans using a variety of Anti-Titan weapons. The objective is to prevent the titans from breaching the walls of Utopia for as long as possible.
+
+## Table of Contents
+- [Preview](#preview)
+  - [Screenshots](#screenshots)
+  - [Gameplay Video](#gameplay-video)
+- [Installation](#installation)
+  - [IntelliJ IDEA](#intellij-idea)
+  - [Eclipse](#eclipse)
+- [Dependencies](#dependencies)
+- [Game Elements](#game-elements)
+  - [Phases](#phases)
+  - [Titans](#titans)
+  - [Weapons](#weapons)
+  - [Game Rules](#game-rules)
+  - [Turn Actions](#turn-actions)
+- [Credits](#credits)
+
 ## Preview
 
 ### Screenshots
@@ -12,19 +31,6 @@
 ### Gameplay Video
 
 *Embed a gameplay video or provide a link to a video showcasing the game.*
-
-## Project Description
-**Attack On Titan: Utopia** is a one-player, endless tower defense game inspired by the hit anime *Attack on Titan*. The game is set in the Utopia District of Wall Rose, where players must defend against waves of titans using a variety of Anti-Titan weapons. The objective is to prevent the titans from breaching the walls of Utopia for as long as possible.
-
-## Table of Contents
-- [Installation](#installation)
-  - [IntelliJ IDEA](#intellij-idea)
-  - [Eclipse](#eclipse)
-- [Dependencies](#dependencies)
-- [Gameplay](#gameplay)
-  - [Game Elements](#game-elements)
-- [Preview](#preview)
-- [Credits](#credits)
 
 ## Installation
 
@@ -83,8 +89,9 @@ To get started with **Attack On Titan: Utopia** in Eclipse, follow these steps:
     - Run the project by selecting the main class and clicking the run button.
 
 ## Dependencies
-- **JavaFX**: Required for the user interface. [JavaFX SDK Download](https://gluonhq.com/products/javafx/)
-- **JDK 11 or higher**
+This software depends on the following applications:
+- **JavaFX:** Required for the user interface. You can download the JavaFX SDK from the [Gluon webpage](https://gluonhq.com/products/javafx/).
+- **JDK 11 or higher:** Java Development Kit (JDK) is a software development environment needed to develop Java applications and applets.
 
 For more information on setting up JavaFX, refer to the [Bro Code JavaFX Playlist](https://www.youtube.com/watch?v=_7OM-cMYWbQ&list=PLZPZq0r_RZOM-8vJA3NQFZB7JroDcMwev).
 
@@ -92,14 +99,22 @@ For more information on setting up JavaFX, refer to the [Bro Code JavaFX Playlis
 - **Titans**: Enemies with various stats like HP, Damage, Speed, and special traits.
 - **Weapons**: Defensive tools with different attack behaviors and costs.
 - **Wall Parts**: Defensive structures with HP that need to be protected.
-  
+
 ### Phases
 
 The game progresses through different phases based on the number of turns elapsed:
 
-- **Early Phase**: Starts with minimal titan spawns.
-- **Intense Phase**: More challenging with increased titan spawns, including tougher types.
-- **Grumbling Phase**: Most difficult phase with frequent spawns of the largest titans.
+- **Early Phase**: Minimal titan spawns, allowing players to build up defenses.
+- **Intense Phase**: Increased titan spawns, including tougher titan types, testing player strategies.
+- **Grumbling Phase**: The most difficult phase with frequent spawns of the largest titans, requiring players to use all their resources and tactics to survive.
+
+**Each Phase a total of seven titans spawn, spawning one titan in each turn except for the last part of the _Grumbling Phase_**
+
+| Phase           | Description                                                     | Titan Types              | Difficulty Level |
+|-----------------|-----------------------------------------------------------------|--------------------------|------------------|
+| Early Phase     | Minimal titan spawns, allowing players to build up defenses.    | Pure Titan, Abnormal Titan | Low              |
+| Intense Phase   | Increased titan spawns, including tougher titan types.          | Pure Titan, Abnormal Titan, Armored Titan | Medium           |
+| Grumbling Phase | Most difficult phase with frequent spawns of the largest titans.| Pure Titan, Abnormal Titan, Armored Titan, Colossal Titan | High              |
 
 ### Titans
 
@@ -136,9 +151,9 @@ The game progresses through different phases based on the number of turns elapse
 
 Each turn, players can choose to deploy weapons or pass. Turn sequence involves titan movement, weapon attacks, new titan spawns, and phase updates.
 
-This structure provides a detailed breakdown of the game's mechanics, making it easier for users to understand the gameplay elements and strategies involved in **Attack On Titan: Utopia**. Adjust the content as per your specific game details and preferences.
-
 ## Credits
-- **Developers**: Yehia Rasheed...
+- **Developers**: Yehia Rasheed
 - **Inspired by**: *Attack on Titan* anime series
+- **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
+
 ---
