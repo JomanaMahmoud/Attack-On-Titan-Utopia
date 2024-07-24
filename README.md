@@ -30,7 +30,7 @@
 
 ### Gameplay Video
 
-*Embed a gameplay video or provide a link to a video showcasing the game.*
+*Embed a gameplay video or provide a link to a video showcasing the game.* [To Be Added]
 
 ## Installation
 
@@ -150,7 +150,7 @@ The game progresses through different phases based on the number of turns elapse
 Each turn, players can choose to deploy weapons or pass. Turn sequence involves titan movement, weapon attacks, new titan spawns, and phase updates.
 
 ## Credits
-- **Developers**: Yehia Rasheed
+- **Developers**: Jomana Mahmoud, Nada Yasser & Yehia Rasheed.
 - **Inspired by**: *Attack on Titan* anime series
 - **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
 
