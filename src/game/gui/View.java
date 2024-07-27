@@ -12,7 +12,7 @@ import game.engine.titans.ArmoredTitan;
 import game.engine.titans.ColossalTitan;
 import game.engine.titans.PureTitan;
 import game.engine.titans.Titan;
-import java.awt.Color;
+//import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -75,6 +75,7 @@ public class View extends Application {
 	private MediaPlayer mediaPlayer2;
 	private MediaPlayer mediaPlayer3;
 	private boolean stop = false;
+	private int settingsNum = 0;
 	//EASY
 	private FlowPane lane1weaponHB = new FlowPane();
 	private FlowPane lane2weaponHB = new FlowPane();
@@ -188,13 +189,14 @@ public class View extends Application {
        
         
 		battle = new Battle(0, 0, 0, 0, 0);
-		VBox root = new VBox(10);
+		VBox root = new VBox(15);
 		Button Play = new Button("Play");
 		Button Instructions = new Button("Game Instructions");
 		root.setAlignment(Pos.CENTER);
 		root.setStyle("-fx-background-color: transparent");
+		root.setTranslateY(10);
 		Play.setPrefHeight(26);
-		Play.setPrefWidth(94);
+		Play.setPrefWidth(120);
 		Instructions.setPrefHeight(26);
 		Instructions.setPrefWidth(300);
 		InputStream is = getClass().getResourceAsStream("/SpaceGames.otf");
@@ -288,34 +290,31 @@ public class View extends Application {
         Scene settings = new Scene(settingsSliders,1920,1080);
         settings.setFill(new ImagePattern(blurredImage));
         settings.setCursor(Cursor);
-		Button back1 = new Button("Back");
-		back1.setOnAction(new EventHandler<ActionEvent>() {			
-			public void handle(ActionEvent event) {
-			    mediaPlayer.seek(Duration.ZERO); 
-			    mediaPlayer.play();
-				primaryStage.setScene(s1);			
-				}
-				});
+		Button backButtonSettings = new Button("Back");
 		settings.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if (event.getCode() == KeyCode.ESCAPE) {
                 primaryStage.close(); // Close the stage when 'Esc' is pressed
             }
         });
-		settingsSliders.getChildren().add(back1);
-		back1.setTranslateX(140);
-		back1.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24; ");
-        Button settingsButton = new Button();
+		settingsSliders.getChildren().add(backButtonSettings);
+		backButtonSettings.setTranslateX(140);
+		backButtonSettings.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24; ");
         Image settingsIc = new Image("Settings.png");
         ImageView settingsIcon = new ImageView(settingsIc);
         settingsIcon.setFitHeight(40);
-        settingsIcon.setFitWidth(80);
+        settingsIcon.setFitWidth(40);
+		Button settingsButton = new Button();
         settingsButton.setGraphic(settingsIcon);
-		settingsButton.setPrefHeight(45);
-		settingsButton.setPrefWidth(80);
+		settingsButton.setPrefHeight(40);
+		settingsButton.setPrefWidth(40);
+		settingsButton.setTranslateX(700);
+		settingsButton.setTranslateY(-600);
+		settingsButton.setStyle("-fx-background-color: transparent");
 		settingsButton.setOnAction(new EventHandler<ActionEvent>() {			
 		public void handle(ActionEvent event) {
 			mediaPlayer.seek(Duration.ZERO);
 			mediaPlayer.play();
+			settingsNum = 1;
 			primaryStage.setScene(settings);
 			
 			}
@@ -323,8 +322,7 @@ public class View extends Application {
         
 		root.getChildren().add(logo);
 		root.getChildren().addAll(Play, Instructions,settingsButton);
-		
-		HBox easyhard = new HBox(10);
+		HBox easyHard = new HBox(100);
 		VBox root2 = new VBox(10);
 		Scene s2 = new Scene(root2,1920,1080);
 		s2.setFill(backIP);
@@ -338,27 +336,38 @@ public class View extends Application {
 		Label choose = new Label("Choose Game mode");
 		choose.setTranslateY(-20);
 		//choose.setFont(font);
-		choose.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 30; ");
+		choose.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 30; -fx-font-color: #979798; ");
 		choose.setTextFill(javafx.scene.paint.Color.WHITE);
 		//buttons for easy and hard
 		Button Easy = new Button("Easy");
 		Button Hard = new Button("Hard");
-	
-		//Easy.setOpacity(0.85); 
-		//setOpacity(0.85); 
+
 		root2.setAlignment(Pos.CENTER);
 		root2.setStyle("-fx-background-color: transparent");
-		easyhard.setAlignment(Pos.CENTER);
-		easyhard.setStyle("-fx-background-color: transparent");
-		//Easy.setStyle("-fx-font-size: 18;");
-		//Hard.setStyle("-fx-font-size: 18;");
+		easyHard.setAlignment(Pos.CENTER);
+		easyHard.setStyle("-fx-background-color: transparent");
+
 		Easy.setPrefHeight(26);
 		Easy.setPrefWidth(113);
 		Hard.setPrefHeight(26);
 		Hard.setPrefWidth(113);
-		root2.getChildren().add(choose);
-		root2.getChildren().add(easyhard);
-		easyhard.getChildren().addAll(Easy, Hard);
+		Button easyHardSettingsButton = new Button();
+		easyHardSettingsButton.setGraphic(settingsIcon);
+		easyHardSettingsButton.setPrefHeight(40);
+		easyHardSettingsButton.setPrefWidth(40);
+		easyHardSettingsButton.setTranslateX(700);
+		easyHardSettingsButton.setTranslateY(-475);
+		easyHardSettingsButton.setStyle("-fx-background-color: transparent");
+		easyHardSettingsButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				mediaPlayer.seek(Duration.ZERO);
+				mediaPlayer.play();
+				settingsNum = 2;
+				primaryStage.setScene(settings);
+			}
+		});
+		root2.getChildren().addAll(choose,easyHard,easyHardSettingsButton);
+		easyHard.getChildren().addAll(Easy, Hard);
 
 		
 		AnchorPane videopane = new AnchorPane();
@@ -425,7 +434,6 @@ public class View extends Application {
 		back.setPrefSize(100,40);
 		back.setMaxSize(100, 40);
 		Image Instructionsimage = new Image("InstructionsImage.png");
-		//s3.setFill(new ImagePattern(Instructionsimage));
 		ImageView InstructionsIV = new ImageView(Instructionsimage);
 		InstructionsIV.setFitWidth(1182);
 		InstructionsIV.setFitHeight(662);
@@ -454,7 +462,7 @@ public class View extends Application {
 		currentRescourcesInShop.setTextFill(javafx.scene.paint.Color.WHITE);
 		currentRescourcesInShop.setLayoutX(48);
 		currentRescourcesInShop.setLayoutY(84);
-		//currentRescourcesInShop.setFont(font2);
+
 		//root4
 		s4.setFill(new ImagePattern(blurredImage));
 		root4.setStyle("-fx-background-color: transparent");
@@ -473,20 +481,6 @@ public class View extends Application {
 					e.printStackTrace();
 				}
 				updateall();
-				//dh ghalat 
-//				lane1 = new ImageView(lane);
-//				lane2 = new ImageView(lane);
-//				lane3 = new ImageView(lane);
-//				lane1weaponHB = new FlowPane();
-//				lane2weaponHB = new FlowPane();
-//				lane3weaponHB = new FlowPane();
-//				wallHealth1 = new ProgressBar();
-//				wallHealth2 = new ProgressBar();
-//				wallHealth3 = new ProgressBar();
-//				lane1weapon = new StackPane(lane1,lane1weaponHB,wallHealth1);
-//				lane2weapon = new StackPane(lane2,lane2weaponHB,wallHealth2);
-//				lane3weapon = new StackPane(lane3,lane3weaponHB,wallHealth3);
-// 				
 			    mediaPlayer1.seek(Duration.ZERO); 
 			    mediaPlayer1.play();
 				primaryStage.setScene(s4);
@@ -504,10 +498,6 @@ public class View extends Application {
 		currentTurn= new Label("Current Turn: " );
 		currentPhase= new Label("Current Phase:" );
 		currentResources= new Label("Current Resources: ");
-//		currentScore.setFont(font);
-//		currentTurn.setFont(font);
-//		currentResources.setFont(font);
-//		currentPhase.setFont(font);
 		currentScore.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 18;");
 		currentScore.setTextFill(javafx.scene.paint.Color.WHITE);
 		currentTurn.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 18;");
@@ -605,7 +595,20 @@ public class View extends Application {
 		purchase.setFont(font);
 		pass.setFont(font);
 		purchaseAndPass.setAlignment(Pos.CENTER);
-		purchaseAndPass.getChildren().addAll(purchase,pass);
+		Button easySettingsButton = new Button();
+		easySettingsButton.setGraphic(settingsIcon);
+		easySettingsButton.setPrefHeight(40);
+		easySettingsButton.setPrefWidth(40);
+		easySettingsButton.setStyle("-fx-background-color: transparent");
+		easySettingsButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				mediaPlayer.seek(Duration.ZERO);
+				mediaPlayer.play();
+				settingsNum = 3;
+				primaryStage.setScene(settings);
+			}
+		});
+		purchaseAndPass.getChildren().addAll(purchase,pass,easySettingsButton);
 		root4.getChildren().add(purchaseAndPass);
 		VBox root5 = new VBox(10);
 		
@@ -636,14 +639,7 @@ public class View extends Application {
                 primaryStage.close(); // Close the stage when 'Esc' is pressed
             }
         });
-//		weaponshop.setFill(new ImagePattern(weaponshopimage));
-//		double imageWidth = weaponshopimage.getWidth();
-//		double imageHeight = weaponshopimage.getHeight();
-//		double centerX = (1920 - imageWidth) / 2;
-//		double centerY = (1080 - imageHeight) / 2;
-//		weaponShopImageView.setX(centerX);
-//		weaponShopImageView.setY(centerY);
-//		
+
 		weapon.getChildren().add(weaponShopImageView);
     
         weaponShopImageView.setFitWidth(1365);
@@ -673,10 +669,8 @@ public class View extends Application {
 		Image wallTrap = new Image("weapon4.png");
 		
 		//first button
-				//purchasePiercing.setLayoutX(261);
 				purchasePiercing.setTranslateX(-435);
 				purchasePiercing.setTranslateY(160);
-				//purchasePiercing.setLayoutY(827);
 				purchasePiercing.setFont(font2);
 				purchasePiercing.setStyle("-fx-background-color: #dfbd69;");
 				purchasePiercing.setPrefHeight(50-20);
@@ -728,7 +722,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane1weaponHB.getChildren().add(piercing);
             	 //need to add animation even if added more than once
             	 primaryStage.setScene(s4);
@@ -800,7 +793,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane2weaponHB.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s4);
@@ -872,7 +864,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane3weaponHB.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s4);
@@ -938,7 +929,6 @@ public class View extends Application {
 		});
 		purchasePiercing.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(s4);
 				weaponCodeChosen = 1;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -946,7 +936,6 @@ public class View extends Application {
 		});
 		purchaseSniper.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosen = 2;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -954,7 +943,6 @@ public class View extends Application {
 		});
 		purchaseVolley.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosen = 3;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -962,7 +950,6 @@ public class View extends Application {
 		});
 		purchaseWallTrap.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosen = 4;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -988,7 +975,6 @@ public class View extends Application {
 				try {
 					battle = new Battle(1, 0, 700, 5, 125);
 					updateallHard();
-					//System.out.println("hard battle starts now");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -997,6 +983,20 @@ public class View extends Application {
 			    mediaPlayer1.play();
 				primaryStage.setScene(s5);
 				}
+		});
+		backButtonSettings.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				mediaPlayer.seek(Duration.ZERO);
+				mediaPlayer.play();
+				if (settingsNum == 1)
+					primaryStage.setScene(s1);
+				else if (settingsNum == 2)
+					primaryStage.setScene(s2);
+				else if (settingsNum == 3)
+					primaryStage.setScene(s4);
+				else if (settingsNum == 4)
+					primaryStage.setScene(s5);
+			}
 		});
 		currentScoreH = new Label("Current score: " );
 		currentTurnH= new Label("Current Turn: " );
@@ -1104,7 +1104,20 @@ public class View extends Application {
 		purchaseH.setFont(font);
 		passH.setFont(font);
 		purchaseAndPassH.setAlignment(Pos.CENTER);
-		purchaseAndPassH.getChildren().addAll(purchaseH,passH);
+		Button hardSettingsButton = new Button();
+		hardSettingsButton.setGraphic(settingsIcon);
+		hardSettingsButton.setPrefHeight(40);
+		hardSettingsButton.setPrefWidth(40);
+		hardSettingsButton.setStyle("-fx-background-color: transparent");
+		hardSettingsButton.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				mediaPlayer.seek(Duration.ZERO);
+				mediaPlayer.play();
+				settingsNum = 4;
+				primaryStage.setScene(settings);
+			}
+		});
+		purchaseAndPassH.getChildren().addAll(purchaseH,passH,hardSettingsButton);
 		//add lanes and labels and dangerlevels to vbox hardlanes
 		
 		hardlanes.setAlignment(Pos.CENTER);
@@ -1145,10 +1158,8 @@ public class View extends Application {
         weaponShopImageH.setFitHeight(768);
         weaponShopImageH.setTranslateY(-35);
 		//first button
-				//purchasePiercing.setLayoutX(261);
 				purchasePiercingH.setTranslateX(-435);
 				purchasePiercingH.setTranslateY(160);
-				//purchasePiercing.setLayoutY(827);
 				purchasePiercingH.setFont(font2);
 				purchasePiercingH.setStyle("-fx-background-color: #dfbd69;");
 				purchasePiercingH.setPrefHeight(50-20);
@@ -1222,12 +1233,9 @@ public class View extends Application {
              updateallHard();
              if(weaponCodeChosenH == 1)
              {
-//                	 piercing.setLayoutX(47.0);
-//                	 piercing.setLayoutY(101.0);
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(30);
-                	 //piercing.setTranslateX(-325);
             		 lane1weaponFlow.getChildren().add(piercing);
             	 //need to add animation even if added more than once
             	 primaryStage.setScene(s5);
@@ -1237,10 +1245,6 @@ public class View extends Application {
              {
                  if(weaponCodeChosenH == 2)
                  {
-
-//                		 sniper.setX(100);
-//                    	 sniper.setY(100);
-//                    	 root4.getChildren().add(sniper);
                 		 ImageView sniper = new ImageView(sniperCannon);
                  		 sniper.setFitHeight(50);
                 		 sniper.setFitWidth(30);
@@ -1251,11 +1255,7 @@ public class View extends Application {
                  else 
                  {
                      if(weaponCodeChosenH == 3)
-                     {   
-
-//                    	 volleySpread.setX(275);
-//                    	 volleySpread.setY(275);
-//                    	 root4.getChildren().add(volleySpread);
+                     {
                     	 ImageView volleySpread = new ImageView(volleySpreadCannon);
                  		 volleySpread.setFitHeight(50);
                 		 volleySpread.setFitWidth(30);
@@ -1267,9 +1267,6 @@ public class View extends Application {
                      {
                          if(weaponCodeChosenH == 4)
                          {
-//                            wallT.setX(300);
-//                            wallT.setY(300);
-//                            root4.getChildren().add(wallT);
                         	  ImageView wallT = new ImageView(wallTrap);
                         	  wallT.setFitHeight(50);
                         	  wallT.setFitWidth(30);
@@ -1310,7 +1307,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane2weaponFlow.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s5);
@@ -1381,7 +1377,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane3weaponFlow.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s5);
@@ -1452,7 +1447,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane4weaponFlow.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s5);
@@ -1523,7 +1517,6 @@ public class View extends Application {
             		ImageView piercing = new ImageView(piercingCannon);
              		 piercing.setFitHeight(50);
             		 piercing.setFitWidth(25);
-                	 //piercing.setTranslateX(-325);
             		 lane5weaponFlow.getChildren().add(piercing);
             		 //need to add animation even if added more than once
             		 primaryStage.setScene(s5);
@@ -1601,7 +1594,6 @@ public class View extends Application {
 		
 		purchasePiercingH.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(s4);
 				weaponCodeChosenH = 1;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -1609,7 +1601,6 @@ public class View extends Application {
 		});
 		purchaseSniperH.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosenH = 2;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -1617,7 +1608,6 @@ public class View extends Application {
 		});
 		purchaseVolleyH.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosenH = 3;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
@@ -1625,87 +1615,18 @@ public class View extends Application {
 		});
 		purchaseWallTrapH.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
-				//primaryStage.setScene(weaponshop);
 				weaponCodeChosenH = 4;
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
 				}
 		});
-		//primaryStage.setFullScreenExitHint("");
-		//primaryStage.setFullScreen(true);
+
 		primaryStage.setResizable(false);
 		primaryStage.getIcons().add(icon);
 		primaryStage.show();
 
 	}
 // width from above till first lane is 58 pixels, first lane height is 149, same for all lanes too so we need to spawn between 58 and 207
-	
-//	public void spawnTitans() 
-//	{
-//		Image pureTitan = new Image("PureTitan.jpeg");
-//		Image abnormalTitan = new Image("AbnormalTitan.jpeg");
-//		Image armoredTitan = new Image("ArmoredTitan.jpg");
-//		Image colossalTitan = new Image("ColossalTitan.jpeg");
-//		ImageView titan1 = new ImageView(); 
-//		ImageView titan2 = new ImageView(); 
-//		ImageView titan3 = new ImageView(); 
-//		ImageView titan4 = new ImageView(); 
-//		ImageView titan5 = new ImageView(); 
-//		ImageView titan6 = new ImageView(); 
-//		ImageView titan7 = new ImageView();
-//		ImageView[] arr = new ImageView[7];
-//		arr[0] = titan1; arr[1] = titan2; arr[2] = titan3; arr[3] = titan4; arr[4] = titan5; arr[5] = titan6; arr[6] = titan7;
-//		//int i = 0;
-//		Titan titan = null;
-//		int random = 0; 
-//        Random rand = new Random();
-//        //must use active lanes later
-//        //ArrayList<Titan> temp = battle.getOriginalLanes().get(0);
-//        Object[] temp = battle.getOriginalLanes().get(0).getTitans().toArray();
-//        
-//       // Iterator<Titan> iterator = (battle.getApproachingTitans()).iterator();
-//        //while (iterator.hasNext()) {
-//        for(int i = 0;i<temp.size();i++)
-//        {
-//            //Titan titan = iterator.next();
-//            titan = temp.get(i);
-//            random = rand.nextInt(207 - 58 + 1) + 58;
-//            if(titan instanceof PureTitan)
-//            {
-//            	arr[i] = new ImageView(pureTitan);
-//            }
-//            else {
-//            if(titan instanceof AbnormalTitan)
-//            {
-//            	arr[i] = new ImageView(abnormalTitan);
-//            }
-//            else 
-//            {
-//				if(titan instanceof ArmoredTitan)
-//				{
-//					arr[i] = new ImageView(armoredTitan);
-//				}
-//				else 
-//				{
-//					arr[i] = new ImageView(colossalTitan);
-//				}
-//			}}
-//            //arr[i].setLayoutY(random);
-//            //scale here is 10 for now
-//           // arr[i].setLayoutX(battle.getTitanSpawnDistance()*10);
-//           // arr[i].setLayoutX(500);
-//            //root4.getChildren().add(2, arr[i]);
-//            Image log = new Image("shop Layout.jpeg");
-//            ImageView l = new ImageView(log);
-//            l.setFitHeight(60);
-//            l.setFitWidth(30);
-//            l.setLayoutX(300);
-//            lane1weapon.getChildren().add(l);
-//            //lane1weapon.getChildren().add(arr[i]);
-//            //i++;
-//	}        
-////	}
-////	}
 	public void spawnTitans()
 	{
 		Image pureTitan = new Image("PureTitan.png");
@@ -1941,173 +1862,6 @@ public class View extends Application {
 			}
 		}
 	}
-	
-//	public void spawnTitans()
-//	{
-//		Image pureTitan = new Image("PureTitan.png");
-//		Image abnormalTitan = new Image("AbnormalTitan.png");
-//		Image armoredTitan = new Image("ArmoredTitan.png");
-//		Image colossalTitan = new Image("ColossalTitan.png");
-//		Lane lane = null;
-//		PriorityQueue<Titan> temp;
-//		Titan titan= null;
-//		for(int i = 0 ; i <3; i++)
-//		{
-//			lane = battle.getOriginalLanes().get(i);
-//			temp= lane.getTitans();
-//			Iterator<Titan> iter = temp.iterator();
-//			while(iter.hasNext())
-//			{	titan = iter.next();
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-30,25);
-//				if(titan instanceof PureTitan)
-//		            {	
-//		        		ImageView pure = new ImageView(pureTitan); 
-//		        		Label health1 = new Label();
-//		        		health1.setText("Health: " + titan.getCurrentHealth());
-//		        		health1.setTranslateY(random-25);
-//		        		health1.setTranslateX(titan.getDistance());
-//		        		if(i == 0)
-//		        		{
-//		        			lane1titans.getChildren().clear();
-//		        			lane1titans.getChildren().addAll(pure,health1);
-//		        		}
-//		        		else 
-//		        		{
-//							if(i == 1)
-//							{
-//								lane2titans.getChildren().clear();
-//								lane2titans.getChildren().addAll(pure,health1);
-//							}
-//							else 
-//							{
-//								if(i == 2)
-//								{
-//									lane3titans.getChildren().clear();
-//									lane3titans.getChildren().addAll(pure,health1);
-//								}
-//							}
-//						}
-//		            	pure.setTranslateX(titan.getDistance());
-//		            	pure.setTranslateY(random);
-//		        		pure.setFitHeight(15*4);
-//		        		pure.setFitWidth(10*4);
-//		        		titans1.add(pure);
-//		        		titans1labels.add(health1);
-//						move(pure,health1,10*5);
-//		            }
-//		            if(titan instanceof AbnormalTitan)
-//		            {	
-//		        		ImageView abnormal = new ImageView(abnormalTitan);
-//		        		Label health2 = new Label();
-//		        		health2.setText("Health: " + titan.getCurrentHealth());
-//		        		health2.setTranslateY(-20);
-//		        		health2.setTranslateX(titan.getDistance());
-//		        		if(i == 0)
-//		        		{	
-//		        			lane1titans.getChildren().clear();
-//		        			lane1titans.getChildren().addAll(abnormal,health2);
-//		        		}
-//		        		else 
-//		        		{
-//							if(i == 1)
-//							{
-//			        			lane2titans.getChildren().clear();
-//			        			lane2titans.getChildren().addAll(abnormal,health2);
-//							}
-//							else 
-//							{
-//								if(i == 2)
-//								{
-//				        			lane3titans.getChildren().clear();
-//				        			lane3titans.getChildren().addAll(abnormal,health2);
-//								}
-//							}
-//		        		}
-//		            	abnormal.setTranslateX(titan.getDistance());
-//		            	abnormal.setTranslateY(random);
-//		        		abnormal.setFitHeight(10*4);
-//		        		abnormal.setFitWidth(10*4);
-//		        		titans1.add(abnormal);
-//		        		titans1labels.add(health2);
-//						move(abnormal,health2,15*5);
-//		            }
-//		            if(titan instanceof ArmoredTitan)
-//		            {	
-//		        		ImageView armored = new ImageView(armoredTitan); 
-//		        		Label health3 = new Label();
-//		        		health3.setText("Health: " + titan.getCurrentHealth());
-//		        		health3.setTranslateY(-25);
-//		        		health3.setTranslateX(titan.getDistance());
-//		        		if(i == 0)
-//		        			{
-//		        			lane1titans.getChildren().clear();
-//		        			lane1titans.getChildren().addAll(armored,health3);
-//		        			}
-//		        		else 
-//		        		{
-//							if(i == 1)
-//								{
-//			        			lane2titans.getChildren().clear();
-//			        			lane2titans.getChildren().addAll(armored,health3);
-//								}
-//							else 
-//							{
-//								if(i == 2)
-//								{
-//				        			lane3titans.getChildren().clear();
-//				        			lane3titans.getChildren().addAll(armored,health3);
-//								}
-//							}
-//		        		}
-//		            	armored.setTranslateX(titan.getDistance());
-//		            	armored.setTranslateY(random);
-//		        		armored.setFitHeight(15*4);
-//		        		armored.setFitWidth(10*4);
-//		        		titans1.add(armored);
-//		        		titans1labels.add(health3);
-//						move(armored,health3,10*5);
-//		            }
-//		            if(titan instanceof ColossalTitan)
-//		            {	
-//		        		ImageView colossal = new ImageView(colossalTitan); 
-//		        		Label health4 = new Label();
-//		        		health4.setText("Health: " + titan.getCurrentHealth());
-//		        		health4.setTranslateY(-30);
-//		        		health4.setTranslateX(titan.getDistance());
-//		        		if(i == 0)
-//						{
-//		        			lane1titans.getChildren().clear();
-//		        			lane1titans.getChildren().addAll(colossal,health4);
-//						}
-//		        		else 
-//		        		{
-//							if(i == 1)
-//							{
-//								lane2titans.getChildren().clear();
-//								lane2titans.getChildren().addAll(colossal,health4);
-//							}
-//							else 
-//							{
-//								if(i == 2)
-//								{
-//									lane3titans.getChildren().clear();
-//									lane3titans.getChildren().addAll(colossal,health4);
-//								}
-//							}
-//		        		}
-//		            	colossal.setTranslateX(titan.getDistance());
-//		            	colossal.setTranslateY(random);
-//		        		colossal.setFitHeight(60*2);
-//		        		colossal.setFitWidth(10*6);
-//		        		titans1.add(colossal);
-//		        		titans1labels.add(health4);
-//						move(colossal,health4,5*5);
-//		            }
-//				
-//			}}
-//		    }
 
 	public void spawnTitansH()
 	{
@@ -2492,334 +2246,19 @@ public class View extends Application {
 			}
 		}
 	}
-//		public void spawnTitansH()
-//	{
-//		Image pureTitan = new Image("PureTitan.png");
-//		Image abnormalTitan = new Image("AbnormalTitan.png");
-//		Image armoredTitan = new Image("ArmoredTitan.png");
-//		Image colossalTitan = new Image("ColossalTitan.png");
-//		ImageView pure = new ImageView(); 
-//		ImageView abnormal  = new ImageView(); 
-//		ImageView armored  = new ImageView(); 
-//		ImageView colossal  = new ImageView(); 
-//	
-//
-//		Lane leastDangerousLane= battle.getLanes().peek();
-//		int index = battle.getOriginalLanes().indexOf(leastDangerousLane);
-//		Titan titan = null;
-//		if(index == 0)
-//		{
-//			for(int i = 0;i<battle.getNumberOfTitansPerTurn();i++)
-//			{	
-//
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-30,20);
-//				titan = leastDangerousLane.getTitans().peek();
-//	            if(titan instanceof PureTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//	            	pure=  new ImageView(pureTitan); 
-//	            	lane1weaponStack.getChildren().addAll(pure,health1);	
-//	            	pure.setTranslateX(730);
-//	            	pure.setTranslateY(random);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-30);
-//	            	pure.setFitHeight(15*4);
-//	            	pure.setFitWidth(10*4);
-//					move(pure,health1,500);
-//	            }
-//	            if(titan instanceof AbnormalTitan)
-//	            {	
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					abnormal = new ImageView(abnormalTitan); 
-//					abnormal.setFitHeight(10*4);
-//					abnormal.setFitWidth(10*4);
-//	            	lane1weaponStack.getChildren().addAll(abnormal,health1);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	abnormal.setTranslateX(730);
-//	            	abnormal.setTranslateY(random);
-//					move(abnormal,health1,500);
-//	            }
-//	            if(titan instanceof ArmoredTitan)
-//	            {	
-//	            	Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					armored=  new ImageView(armoredTitan); 
-//					armored.setFitHeight(15*4);
-//					armored.setFitWidth(10*4);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	lane1weaponStack.getChildren().addAll(armored,health1);
-//	            	armored.setTranslateX(730);
-//	            	armored.setTranslateY(random);
-//					move(armored,health1,500);
-//	            }
-//	            if(titan instanceof ColossalTitan)
-//	            {	
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					colossal=  new ImageView(colossalTitan); 
-//					colossal.setFitHeight(60);
-//					colossal.setFitWidth(10*6);
-//	            	lane1weaponStack.getChildren().addAll(colossal,health1);
-//	            	colossal.setTranslateX(725);
-//					health1.setTranslateX(725);
-//					health1.setTranslateY(-45);
-//	            	colossal.setTranslateY(random);
-//					move(colossal,health1,500);
-//	            }
-//			}
-//		}
-//	            
-//		if(index == 1)
-//		{
-//			for(int i = 0;i<battle.getNumberOfTitansPerTurn();i++)
-//			{
-//				pure=  new ImageView(pureTitan); 
-//				 abnormal = new ImageView(abnormalTitan); 
-//				 armored=  new ImageView(armoredTitan); 
-//				colossal=  new ImageView(colossalTitan); 
-//				pure.setFitHeight(15*4);
-//				pure.setFitWidth(10*4);
-//				abnormal.setFitHeight(10*4);
-//				abnormal.setFitWidth(10*4);
-//				armored.setFitHeight(15*4);
-//				armored.setFitWidth(10*4);
-//				colossal.setFitHeight(60);
-//				colossal.setFitWidth(10*6);
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-35,20);
-//				titan = leastDangerousLane.getTitans().peek();
-//	            if(titan instanceof PureTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//	            	lane2weaponStack.getChildren().addAll(pure,health1);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-30);
-//	            	pure.setTranslateX(730);
-//					move(pure,health1,500);
-//	            }
-//	            if(titan instanceof AbnormalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//	            	lane2weaponStack.getChildren().addAll(abnormal,health1);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	abnormal.setTranslateX(730);
-//					move(abnormal,health1,500);
-//	            }
-//	            if(titan instanceof ArmoredTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//	            	lane2weaponStack.getChildren().addAll(armored,health1);
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	armored.setTranslateX(730);
-//					move(armored,health1,500);
-//	            }
-//	            if(titan instanceof ColossalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//	            	lane2weaponStack.getChildren().addAll(colossal,health1);
-//					health1.setTranslateX(725);
-//					health1.setTranslateY(-45);
-//	            	colossal.setTranslateX(725);
-//					move(colossal,health1,500);
-//	            }
-//			}
-//		}
-//		if(index == 2)
-//		{
-//			for(int i = 0;i<battle.getNumberOfTitansPerTurn();i++)
-//			{
-//				pure=  new ImageView(pureTitan); 
-//				abnormal = new ImageView(abnormalTitan); 
-//				armored=  new ImageView(armoredTitan); 
-//				colossal=  new ImageView(colossalTitan); 
-//				pure.setFitHeight(15*4);
-//				pure.setFitWidth(10*4);
-//				abnormal.setFitHeight(10*4);
-//				abnormal.setFitWidth(10*4);
-//				armored.setFitHeight(15*4);
-//				armored.setFitWidth(10*4);
-//				colossal.setFitHeight(60);
-//				colossal.setFitWidth(10*6);
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-35,20);
-//				titan = leastDangerousLane.getTitans().peek();
-//	            if(titan instanceof PureTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-30);
-//	            	lane3weaponStack.getChildren().addAll(pure,health1);
-//	            	pure.setTranslateX(730);
-//					move(pure,health1,500);
-//	            }
-//	            if(titan instanceof AbnormalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	lane3weaponStack.getChildren().addAll(abnormal,health1);
-//	            	abnormal.setTranslateX(730);
-//					move(abnormal,health1,500);
-//	            }
-//	            if(titan instanceof ArmoredTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	lane3weaponStack.getChildren().addAll(armored,health1);
-//	            	armored.setTranslateX(730);
-//					move(armored,health1,500);
-//	            }
-//	            if(titan instanceof ColossalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(725);
-//					health1.setTranslateY(-45);
-//	            	lane3weaponStack.getChildren().addAll(colossal,health1);
-//	            	colossal.setTranslateX(725);
-//					move(colossal,health1,500);
-//	            }
-//			}
-//		}
-//		if(index == 3)
-//		{
-//			for(int i = 0;i<battle.getNumberOfTitansPerTurn();i++)
-//			{
-//				pure=  new ImageView(pureTitan); 
-//				 abnormal = new ImageView(abnormalTitan); 
-//				 armored=  new ImageView(armoredTitan); 
-//				colossal=  new ImageView(colossalTitan); 
-//				pure.setFitHeight(15*4);
-//				pure.setFitWidth(10*4);
-//				abnormal.setFitHeight(10*4);
-//				abnormal.setFitWidth(10*4);
-//				armored.setFitHeight(15*4);
-//				armored.setFitWidth(10*4);
-//				colossal.setFitHeight(60);
-//				colossal.setFitWidth(10*6);
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-35,20);
-//				titan = leastDangerousLane.getTitans().peek();
-//	            if(titan instanceof PureTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-30);
-//	            	lane4weaponStack.getChildren().addAll(pure,health1);
-//	            	pure.setTranslateX(730);
-//					move(pure,health1,500);
-//	            }
-//	            if(titan instanceof AbnormalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	lane4weaponStack.getChildren().addAll(abnormal,health1);
-//	            	abnormal.setTranslateX(730);
-//					move(abnormal,health1,500);
-//	            }
-//	            if(titan instanceof ArmoredTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(-35);
-//	            	lane4weaponStack.getChildren().addAll(armored,health1);
-//	            	armored.setTranslateX(730);
-//					move(armored,health1,500);
-//	            	
-//	            }
-//	            if(titan instanceof ColossalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(725);
-//					health1.setTranslateY(-45);
-//	            	lane4weaponStack.getChildren().addAll(colossal,health1);
-//	            	colossal.setTranslateX(725);
-//					move(colossal,health1,500);
-//	            }
-//			}
-//		}		
-//		if(index == 4)
-//		{
-//			for(int i = 0;i<battle.getNumberOfTitansPerTurn();i++)
-//			{
-//				pure=  new ImageView(pureTitan); 
-//				abnormal = new ImageView(abnormalTitan); 
-//				armored=  new ImageView(armoredTitan); 
-//				colossal=  new ImageView(colossalTitan); 
-//				pure.setFitHeight(15*4);
-//				pure.setFitWidth(10*4);
-//				abnormal.setFitHeight(10*4);
-//				abnormal.setFitWidth(10*4);
-//				armored.setFitHeight(15*4);
-//				armored.setFitWidth(10*4);
-//				colossal.setFitHeight(60);
-//				colossal.setFitWidth(10*6);
-//				int random = 0; 
-//		        Random rand = new Random();
-//	            random = rand.nextInt(-35,20);
-//				titan = leastDangerousLane.getTitans().peek();
-//	            if(titan instanceof PureTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(15*4+4);
-//	            	lane5weaponStack.getChildren().addAll(pure,health1);
-//	            	pure.setTranslateX(730);
-//					move(pure,health1,500);
-//	            }
-//	            if(titan instanceof AbnormalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(10*4+4);
-//	            	lane5weaponStack.getChildren().addAll(abnormal,health1);
-//	            	abnormal.setTranslateX(730);
-//					move(abnormal,health1,500);
-//	            }
-//	            if(titan instanceof ArmoredTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(730);
-//					health1.setTranslateY(15*4+4);
-//	            	lane5weaponStack.getChildren().addAll(armored,health1);
-//	            	armored.setTranslateX(730);
-//					move(armored,health1,500);
-//	            }
-//	            if(titan instanceof ColossalTitan)
-//	            {
-//					Label health1 = new Label("Health="+titan.getCurrentHealth());
-//					health1.setTranslateX(725);
-//					health1.setTranslateY(60+4);
-//	            	lane5weaponStack.getChildren().addAll(colossal,health1);
-//	            	colossal.setTranslateX(725);
-//					move(colossal,health1,500);
-//	            }
-//			}
-//		}				
-//
-//	}
+
 	public static void move(ImageView Titan,Label Health,int Speed)
 	{
 		TranslateTransition translate1 = new TranslateTransition();
 		translate1.setByX(-50);
 		translate1.setDuration(Duration.millis(Speed));
 		translate1.setCycleCount(1);
-		//translate.setAutoReverse(true);
 		translate1.setNode(Titan);
 		translate1.play();
 		TranslateTransition translate2 = new TranslateTransition();
 		translate2.setByX(-50);
 		translate2.setDuration(Duration.millis(Speed));
 		translate2.setCycleCount(1);
-		//translate.setAutoReverse(true);
 		translate2.setNode(Health);
 		translate2.play();
 	}
@@ -2861,7 +2300,6 @@ public class View extends Application {
 		if(battle.isGameOver())
 		{
 			displayAlertGameOver("Game Over", "Your Score is: " + battle.getScore());
-			//primaryStage.setScene(s1);
 		}
 	}
 	
@@ -2909,7 +2347,6 @@ public class View extends Application {
 		if(battle.isGameOver())
 		{
 			displayAlertGameOver("Game Over", "Your Score is: " + battle.getScore());
-			//primaryStage.setScene(s1);
 		}	
 	}
 	
@@ -2960,42 +2397,6 @@ public class View extends Application {
 			titans5labelsh.get(i).setText("Health="+battle.getOriginalLanes().get(4).getTitans().peek().getCurrentHealth());
 		}
 	}
-	
-//	public void moveTitansEasy()
-//	{
-//	    // Iterate through titans1 and update their labels
-//	    PriorityQueue<Titan> titansQueue1 = new PriorityQueue<>(battle.getOriginalLanes().get(0).getTitans());
-//	    Iterator<Titan> iterator1 = titansQueue1.iterator();
-//	    int i = 0;
-//	    while (iterator1.hasNext() && i < titans1.size()) {
-//	        Titan titan = iterator1.next();
-//	        move(titans1.get(i), titans1labels.get(i), 500);
-//	        titans1labels.get(i).setText("Health=" + titan.getCurrentHealth());
-//	        i++;
-//	    }
-//
-//	    // Iterate through titans2 and update their labels
-//	    PriorityQueue<Titan> titansQueue2 = new PriorityQueue<>(battle.getOriginalLanes().get(1).getTitans());
-//	    Iterator<Titan> iterator2 = titansQueue2.iterator();
-//	    int j = 0;
-//	    while (iterator2.hasNext() && j < titans2.size()) {
-//	        Titan titan = iterator2.next();
-//	        move(titans2.get(j), titans2labels.get(j), 500);
-//	        titans2labels.get(j).setText("Health=" + titan.getCurrentHealth());
-//	        j++;
-//	    }
-//
-//	    // Iterate through titans3 and update their labels
-//	    PriorityQueue<Titan> titansQueue3 = new PriorityQueue<>(battle.getOriginalLanes().get(2).getTitans());
-//	    Iterator<Titan> iterator3 = titansQueue3.iterator();
-//	    int k = 0;
-//	    while (iterator3.hasNext() && k < titans3.size()) {
-//	        Titan titan = iterator3.next();
-//	        move(titans3.get(k), titans3labels.get(k), 500);
-//	        titans3labels.get(k).setText("Health=" + titan.getCurrentHealth());
-//	        k++;
-//	    }
-//	}
 
     private void displayAlert(String title, String message) {
         Stage alertStage = new Stage();
@@ -3026,27 +2427,6 @@ public class View extends Application {
         label.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
         Button closeButton = new Button("Play Again");
         closeButton.setOnAction(event -> {
-//        	lane1weaponHB = new FlowPane();
-//        	lane2weaponHB = new FlowPane();
-//        	lane3weaponHB = new FlowPane();
-//        	lane = new Image("lane with wall.jpeg");
-//        	lane1 = new ImageView(lane);
-//        	lane2 = new ImageView(lane);
-//        	lane3 = new ImageView(lane);
-//        	wallHealth1 = new ProgressBar();
-//        	wallHealth2 = new ProgressBar();
-//        	wallHealth3 = new ProgressBar();
-//        	lane1weapon = new StackPane(lane1,lane1weaponHB,wallHealth1);
-//        	lane2weapon = new StackPane(lane2,lane2weaponHB,wallHealth2);
-//        	lane3weapon = new StackPane(lane3,lane3weaponHB,wallHealth3);
-//        	colorAdjust = new ColorAdjust();
-//            root7 = new StackPane();
-//            titans1 = new ArrayList<>();
-//            titans2 = new ArrayList<>();
-//            titans3 = new ArrayList<>();
-//            titans1labels = new ArrayList<>();
-//            titans2labels = new ArrayList<>();
-//            titans3labels = new ArrayList<>();
             alertStage.close();
             primaryStage.close();
             primaryStage.setScene(s1);

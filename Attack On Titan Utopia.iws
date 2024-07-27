@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="" />
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
+      <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +21,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="fixing-buttons-style" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;yehiarasheed&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/yehiarasheed/Attack-On-Titan-Utopia.git&quot;,
+    &quot;accountId&quot;: &quot;d4bb5b6f-1cf7-44f7-a01d-e0400eff84a5&quot;
+  }
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -32,32 +52,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.View.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.View.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Legacy Library&quot;: &quot;Legacy library depends on IDE installation&quot;,
+    &quot;Notification.DoNotAsk-Legacy Library&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fixing-buttons-style&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
-    <configuration name="View" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-22" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="View" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
       <module name="M2 Solution" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path &quot;C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\javafx-sdk-22.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml,javafx.media" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.gui.*" />
@@ -88,7 +108,16 @@
       <workItem from="1720893370786" duration="339000" />
       <workItem from="1720893969616" duration="518000" />
       <workItem from="1720897253833" duration="382000" />
-      <workItem from="1720897694540" duration="2407000" />
+      <workItem from="1720897694540" duration="8366000" />
+      <workItem from="1720906787672" duration="159000" />
+      <workItem from="1720944957995" duration="116000" />
+      <workItem from="1720951677968" duration="41000" />
+      <workItem from="1720974400095" duration="2268000" />
+      <workItem from="1721042780750" duration="7000" />
+      <workItem from="1721042936122" duration="8000" />
+      <workItem from="1721076476508" duration="35000" />
+      <workItem from="1722094875334" duration="8386000" />
+      <workItem from="1722107871436" duration="4434000" />
     </task>
     <servers />
   </component>
@@ -106,10 +135,25 @@
                   <entry key="Show.Git.Branches" value="true" />
                 </map>
               </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="original-files/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
             </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
   </component>
 </project>
