@@ -1,5 +1,9 @@
 package game.gui;
 
+import javafx.geometry.Insets;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import game.engine.Battle;
 import game.engine.BattlePhase;
@@ -43,12 +47,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.control.Slider;
@@ -189,21 +187,35 @@ public class View extends Application {
        
         
 		battle = new Battle(0, 0, 0, 0, 0);
-		VBox root = new VBox(15);
-		Button Play = new Button("Play");
+		VBox root = new VBox(10);
+		Button startGame = new Button("Start Game");
+		Background originalBackground = new Background(new BackgroundFill(Color.web("#d1ede9"),new CornerRadii(10), Insets.EMPTY));
+		DropShadow dropShadow = new DropShadow();
+		dropShadow.setColor(Color.web("#cac9ca"));
+		dropShadow.setRadius(10);
+		dropShadow.setOffsetX(-3);
+		dropShadow.setOffsetY(3);
+		startGame.setPrefHeight(26);
+		startGame.setPrefWidth(190);
+		startGame.setBackground(originalBackground);
+		startGame.setPadding(new Insets(10));
+		startGame.setOnMouseEntered(e -> startGame.setEffect(dropShadow));
+		startGame.setOnMouseExited(e -> startGame.setEffect(null));
 		Button Instructions = new Button("Game Instructions");
+		Instructions.setBackground(originalBackground);
+		Instructions.setPadding(new Insets(10));
+		Instructions.setOnMouseEntered(e -> Instructions.setEffect(dropShadow));
+		Instructions.setOnMouseExited(e -> Instructions.setEffect(null));
 		root.setAlignment(Pos.CENTER);
 		root.setStyle("-fx-background-color: transparent");
-		root.setTranslateY(10);
-		Play.setPrefHeight(26);
-		Play.setPrefWidth(120);
+		root.setTranslateY(20);
 		Instructions.setPrefHeight(26);
 		Instructions.setPrefWidth(300);
 		InputStream is = getClass().getResourceAsStream("/SpaceGames.otf");
 		Font font = Font.loadFont(is,16);
 		label.setFont(font);
 		Instructions.setFont(font);
-		Play.setFont(font);
+		startGame.setFont(font);
 		//scene 1  
         StackPane messagePane = new StackPane();
         messagePane.getChildren().addAll(background, label);
@@ -297,6 +309,12 @@ public class View extends Application {
             }
         });
 		settingsSliders.getChildren().add(backButtonSettings);
+		backButtonSettings.setPrefWidth(10);
+		backButtonSettings.setPrefWidth(150);
+		backButtonSettings.setBackground(originalBackground);
+		backButtonSettings.setPadding(new Insets(10));
+		backButtonSettings.setOnMouseEntered(e -> backButtonSettings.setEffect(dropShadow));
+		backButtonSettings.setOnMouseExited(e -> backButtonSettings.setEffect(null));
 		backButtonSettings.setTranslateX(140);
 		backButtonSettings.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24; ");
         Image settingsIc = new Image("Settings.png");
@@ -321,9 +339,9 @@ public class View extends Application {
 			});
         
 		root.getChildren().add(logo);
-		root.getChildren().addAll(Play, Instructions,settingsButton);
+		root.getChildren().addAll(startGame, Instructions,settingsButton);
 		HBox easyHard = new HBox(100);
-		VBox root2 = new VBox(10);
+		VBox root2 = new VBox(65);
 		Scene s2 = new Scene(root2,1920,1080);
 		s2.setFill(backIP);
 		s2.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
@@ -334,8 +352,8 @@ public class View extends Application {
 		Cursor = new ImageCursor(cursorImage, cursorImage.getWidth()/2, cursorImage.getHeight()/2);
 	    s2.setCursor(Cursor);
 		Label choose = new Label("Choose Game mode");
-		choose.setTranslateY(-20);
-		//choose.setFont(font);
+		//choose.setTranslateY(-20);
+		root2.setTranslateY(-10);
 		choose.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 30; -fx-font-color: #979798; ");
 		choose.setTextFill(javafx.scene.paint.Color.WHITE);
 		//buttons for easy and hard
@@ -349,8 +367,18 @@ public class View extends Application {
 
 		Easy.setPrefHeight(26);
 		Easy.setPrefWidth(113);
+		Easy.setFont(font);
+		Easy.setBackground(originalBackground);
+		Easy.setPadding(new Insets(10));
+		Easy.setOnMouseEntered(e -> Easy.setEffect(dropShadow));
+		Easy.setOnMouseExited(e -> Easy.setEffect(null));
 		Hard.setPrefHeight(26);
 		Hard.setPrefWidth(113);
+		Hard.setFont(font);
+		Hard.setBackground(originalBackground);
+		Hard.setPadding(new Insets(10));
+		Hard.setOnMouseEntered(e -> Hard.setEffect(dropShadow));
+		Hard.setOnMouseExited(e -> Hard.setEffect(null));
 		Button easyHardSettingsButton = new Button();
 		easyHardSettingsButton.setGraphic(settingsIcon);
 		easyHardSettingsButton.setPrefHeight(40);
@@ -392,7 +420,7 @@ public class View extends Application {
 		skip.setLayoutY(900);
 		skip.setTranslateY(-8);
 		skip.setTranslateX(20);
-		Play.setOnAction(new EventHandler<ActionEvent>() {			
+		startGame.setOnAction(new EventHandler<ActionEvent>() {
 		public void handle(ActionEvent event) {
 		    mediaPlayer.seek(Duration.ZERO); 
 		    mediaPlayer.play(); 
@@ -430,9 +458,12 @@ public class View extends Application {
 		back.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16;");
 		root3.setAlignment(Pos.CENTER);
 		root3.setStyle("-fx-background-color: transparent");
-		back.setMinSize(100,40);
-		back.setPrefSize(100,40);
-		back.setMaxSize(100, 40);
+		back.setPrefWidth(100);
+		back.setPrefHeight(40);
+		back.setBackground(originalBackground);
+		back.setPadding(new Insets(10));
+		back.setOnMouseEntered(e -> back.setEffect(dropShadow));
+		back.setOnMouseExited(e -> back.setEffect(null));
 		Image Instructionsimage = new Image("InstructionsImage.png");
 		ImageView InstructionsIV = new ImageView(Instructionsimage);
 		InstructionsIV.setFitWidth(1182);
@@ -466,9 +497,7 @@ public class View extends Application {
 		//root4
 		s4.setFill(new ImagePattern(blurredImage));
 		root4.setStyle("-fx-background-color: transparent");
-		
-		Easy.setFont(font);
-		Hard.setFont(font);
+
 		
 		Easy.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
@@ -593,7 +622,15 @@ public class View extends Application {
 		Button purchase = new Button("Purchase");
 		Button pass = new Button("Pass");
 		purchase.setFont(font);
+		purchase.setBackground(originalBackground);
+		purchase.setPadding(new Insets(10));
+		purchase.setOnMouseEntered(e -> purchase.setEffect(dropShadow));
+		purchase.setOnMouseExited(e -> purchase.setEffect(null));
 		pass.setFont(font);
+		pass.setBackground(originalBackground);
+		pass.setPadding(new Insets(10));
+		pass.setOnMouseEntered(e -> pass.setEffect(dropShadow));
+		pass.setOnMouseExited(e -> pass.setEffect(null));
 		purchaseAndPass.setAlignment(Pos.CENTER);
 		Button easySettingsButton = new Button();
 		easySettingsButton.setGraphic(settingsIcon);
@@ -1102,7 +1139,15 @@ public class View extends Application {
 		Button purchaseH = new Button("Purchase");
 		Button passH = new Button("Pass");
 		purchaseH.setFont(font);
+		purchaseH.setBackground(originalBackground);
+		purchaseH.setPadding(new Insets(10));
+		purchaseH.setOnMouseEntered(e -> purchaseH.setEffect(dropShadow));
+		purchaseH.setOnMouseExited(e -> purchaseH.setEffect(null));
 		passH.setFont(font);
+		passH.setBackground(originalBackground);
+		passH.setPadding(new Insets(10));
+		passH.setOnMouseEntered(e -> passH.setEffect(dropShadow));
+		passH.setOnMouseExited(e -> passH.setEffect(null));
 		purchaseAndPassH.setAlignment(Pos.CENTER);
 		Button hardSettingsButton = new Button();
 		hardSettingsButton.setGraphic(settingsIcon);
