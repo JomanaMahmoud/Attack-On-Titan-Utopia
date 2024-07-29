@@ -294,20 +294,30 @@ public class View extends Application {
 		sysVol.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
 		sysVol.setTextFill(javafx.scene.paint.Color.WHITE);
 		sysVol.setTranslateY(-13);
+
+
 		Image muteImage = new Image("Mute_Icon.png");
 		ImageView muteIVSys = new ImageView(muteImage);
+		muteIVSys.setFitWidth(40); // Set the width
+		muteIVSys.setPreserveRatio(true);
 		Button muteSystem = new Button();
+		muteSystem.setTranslateY(-13);
 		muteSystem.setGraphic(muteIVSys);
 		muteSystem.setStyle("-fx-background-color: transparent");
 		muteSystem.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if(systemVolume.getValue() == 0)
 					systemVolume.adjustValue(0.5);
-				else
+				else {
 					systemVolume.adjustValue(0);
+					mediaPlayer.seek(Duration.ZERO);
+					mediaPlayer.play();
+				}
 			}
 		});
+
 		systemVol.getChildren().addAll(sysVol,muteSystem,systemVolume);
+
 		HBox musicVol = new HBox(20);
 		Label musVol = new Label("Music Volume");
 		musVol.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
@@ -315,7 +325,10 @@ public class View extends Application {
 		musVol.setTranslateY(-13);
 		musVol.setTranslateX(-14);
 		Button muteMusic = new Button();
+		muteMusic.setTranslateY(-13);
 		ImageView muteIVMusic = new ImageView(muteImage);
+		muteIVMusic.setFitWidth(40); // Set the width
+		muteIVMusic.setPreserveRatio(true);
 		muteMusic.setGraphic(muteIVMusic);
 		muteMusic.setStyle("-fx-background-color: transparent");
 		muteMusic.setOnAction(new EventHandler<ActionEvent>() {
@@ -324,6 +337,11 @@ public class View extends Application {
 					musicVolume.adjustValue(0.5);
 				else
 					musicVolume.adjustValue(0);
+				if(systemVolume.getValue() != 0)
+				{
+					mediaPlayer.seek(Duration.ZERO);
+					mediaPlayer.play();
+				}
 			}
 		});
 		musicVol.getChildren().addAll(musVol,muteMusic,musicVolume);
@@ -355,7 +373,7 @@ public class View extends Application {
 		backButtonSettings.setPadding(new Insets(10));
 		backButtonSettings.setOnMouseEntered(e -> backButtonSettings.setEffect(dropShadow));
 		backButtonSettings.setOnMouseExited(e -> backButtonSettings.setEffect(null));
-		backButtonSettings.setTranslateX(140);
+		//backButtonSettings.setTranslateX(140);
 		backButtonSettings.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16; ");
         Image settingsIc = new Image("Settings.png");
         ImageView settingsIcon = new ImageView(settingsIc);
