@@ -1,6 +1,7 @@
 package game.gui;
 
 import javafx.geometry.Insets;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -38,10 +39,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,7 +46,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.control.Slider;
 import javafx.scene.media.MediaView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
@@ -453,7 +449,6 @@ public class View extends Application {
         });
 		Cursor = new ImageCursor(cursorImage, cursorImage.getWidth()/2, cursorImage.getHeight()/2);
 	    s3.setCursor(Cursor);
-		//Label instructionsLabel = new Label("Instructions");
 		Button back = new Button("Back");
 		back.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16;");
 		root3.setAlignment(Pos.CENTER);
@@ -464,11 +459,66 @@ public class View extends Application {
 		back.setPadding(new Insets(10));
 		back.setOnMouseEntered(e -> back.setEffect(dropShadow));
 		back.setOnMouseExited(e -> back.setEffect(null));
-		Image Instructionsimage = new Image("InstructionsImage.png");
-		ImageView InstructionsIV = new ImageView(Instructionsimage);
-		InstructionsIV.setFitWidth(1182);
-		InstructionsIV.setFitHeight(662);
-		root3.getChildren().addAll(InstructionsIV,back);
+//		Image Instructionsimage = new Image("InstructionsImage.png");
+//		ImageView InstructionsIV = new ImageView(Instructionsimage);
+//		InstructionsIV.setFitWidth(1182);
+//		InstructionsIV.setFitHeight(662);
+		Label instructionsLabel = new Label("Game Instructions");
+		instructionsLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 36;");
+		instructionsLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		instructionsLabel.setTranslateY(-10);
+		TextArea instructionsText = new TextArea();
+		instructionsText.setCursor(Cursor);
+		instructionsText.setEditable(false);
+		instructionsText.setWrapText(true);
+		instructionsText.setFont(font);
+		instructionsText.setMaxWidth(1300);
+		instructionsText.setPrefHeight(660);
+		root3.setTranslateY(-35);
+		back.setTranslateY(10);
+		instructionsText.setText("Game Elements\n"
+						+ "- Titans: Enemies with various stats like HP, Damage, Speed, and special traits.\n"
+						+ "- Weapons: Defensive tools with different attack behaviors and costs.\n"
+						+ "- Wall Parts: Defensive structures with HP that need to be protected.\n\n"
+						+ "Phases\n\n"
+						+ "The game progresses through different phases based on the number of turns elapsed:\n\n"
+						+ "- Early Phase: Minimal titan spawns, allowing players to build up defenses.\n"
+						+ "- Intense Phase: Increased titan spawns, including tougher titan types, testing player strategies.\n"
+						+ "- Grumbling Phase: The most difficult phase with frequent spawns of the largest titans, requiring players to use all their resources and tactics to survive.\n\n"
+						+ "Each Phase a total of seven titans spawn, spawning one titan in each turn except for the last part of the Grumbling Phase.\n\n"
+						+ "Phase           | Description                                     | Titan Types                     | Difficulty Level\n"
+						+ "----------------|------------------------------------------------|---------------------------------|-----------------\n"
+						+ "Early Phase     | Minimal titan spawns, allowing players to build | Pure Titan, Abnormal Titan     | Low\n"
+						+ "                | up defenses.                                    |                                 |\n"
+						+ "Intense Phase   | Increased titan spawns, including tougher       | Pure Titan, Abnormal Titan,    | Medium\n"
+						+ "                | titan types.                                    | Armored Titan                  |\n"
+						+ "Grumbling Phase | Most difficult phase with frequent spawns of    | Pure Titan, Abnormal Titan,    | High\n"
+						+ "                | the largest titans.                             | Armored Titan, Colossal Titan  |\n\n"
+						+ "Titans\n\n"
+						+ "Types of Titans\n\n"
+						+ "Type          | HP   | Damage | Height | Speed | Resources Value | Danger Level | Special Trait\n"
+						+ "--------------|------|--------|--------|-------|-----------------|--------------|-----------------------------\n"
+						+ "Pure Titan    | 100  | 15     | 15     | 10    | 10              | 1            | -                           \n"
+						+ "Abnormal Titan| 100  | 20     | 10     | 15    | 15              | 2            | Attacks twice per turn      \n"
+						+ "Armored Titan | 200  | 85     | 15     | 10    | 30              | 3            | Takes only 25% damage       \n"
+						+ "Colossal Titan| 1000 | 100    | 60     | 5     | 60              | 4            | Increases speed each move   \n\n"
+						+ "Weapons\n\n"
+						+ "Types of Weapons\n\n"
+						+ "Weapon Type        | Price | Damage | Attack Action\n"
+						+ "-------------------|-------|--------|---------------------------------------------------------\n"
+						+ "Piercing Cannon    | 25    | 10     | Attacks closest 5 titans to the wall                     \n"
+						+ "Sniper Cannon      | 25    | 35     | Attacks the first closest titan to wall                  \n"
+						+ "Volley Spread Cannon| 100  | 5      | Attacks all titans between min and max range             \n"
+						+ "Wall Trap          | 75    | 100    | Attacks a titan that reached the walls                   \n\n"
+						+ "Game Rules\n\n"
+						+ "- Winning and Losing Conditions: The game has no winning condition; players aim to survive as long as possible. Losing occurs when all wall parts are destroyed.\n"
+						+ "- Titan Movement: Titans move closer to the wall each turn based on their speed.\n"
+						+ "- Attack Actions: Titans and weapons perform attack actions each turn, affecting wall parts and titans respectively.\n"
+						+ "- Defeated Targets: Defeated titans add resources and score to the player. Destroyed wall parts render lanes inactive.\n\n"
+						+ "Turn Actions\n\n"
+						+ "Each turn, players can choose to deploy weapons or pass. Turn sequence involves titan movement, weapon attacks, new titan spawns, and phase updates. ");
+		s3.getStylesheets().add(getClass().getResource("TextArea.css").toExternalForm());
+		root3.getChildren().addAll(instructionsLabel,instructionsText,back);
 		Instructions.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16;");
 		back.setAlignment(Pos.BOTTOM_CENTER);
 		s3.setFill(new ImagePattern(blurredImage));

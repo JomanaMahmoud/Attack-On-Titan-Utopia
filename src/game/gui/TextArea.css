@@ -1,0 +1,29 @@
+.text-area {
+    -fx-control-inner-background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    -fx-text-fill: white; /* White text */
+    -fx-background-insets: 0; /* Remove default padding */
+    -fx-background-radius: 5px; /* Smooth rounded corners */
+    -fx-focus-color: transparent; /* Remove focus border */
+    -fx-faint-focus-color: transparent; /* Remove faint focus color */
+    -fx-background-color: transparent; /* Transparent overall background */
+    -fx-border-color: transparent; /* White border for clarity */
+    -fx-border-width: 2px; /* Border thickness */
+    -fx-border-radius: 5px; /* Smooth rounded borders */
+    -fx-effect: null; /* Remove any effects */
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent; /* Transparent background for the scrollbar */
+}
+
+.scroll-bar .increment-button, .scroll-bar .decrement-button {
+    -fx-background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the arrow buttons */
+    -fx-background-radius: 5px; /* Smooth rounded corners */
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(85, 85, 85, 0.7); /* Semi-transparent scrollbar thumb */
+    -fx-background-insets: 2; /* Insets for the thumb */
+    -fx-background-radius: 5px; /* Smooth rounded corners */
+    -fx-effect: null; /* Remove any effects on the thumb */
+}
