@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it">
+      <change afterPath="$PROJECT_DIR$/src/Mute_Icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -59,7 +60,7 @@
     &quot;Notification.DisplayName-DoNotAsk-Legacy Library&quot;: &quot;Legacy library depends on IDE installation&quot;,
     &quot;Notification.DoNotAsk-Legacy Library&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;3-fixing-instructions-page&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;4-fixing-settings-page&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia&quot;,
@@ -76,6 +77,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="View" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
@@ -146,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722153518979</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it">
+      <option name="closed" value="true" />
+      <created>1722272023659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1722272023659</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +197,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
     <MESSAGE value="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;" />
+    <MESSAGE value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
   </component>
 </project>
