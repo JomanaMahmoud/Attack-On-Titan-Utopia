@@ -1,6 +1,7 @@
 package game.gui;
 
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -57,6 +58,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 
 public class View extends Application {
 
@@ -428,12 +431,39 @@ public class View extends Application {
 		settingsSliders.setTranslateY(-30);
 		systemVol.setAlignment(Pos.CENTER);
 		musicVol.setAlignment(Pos.CENTER);
-		settingsSliders.setStyle("-fx-background-color: transparent");
+		BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
+		BackgroundImage blurredImagebgi = new BackgroundImage(blurredImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
+		Background blurredImagebg = new Background(blurredImagebgi);
+		settingsSliders.setBackground(blurredImagebg);
+		//settingsSliders.setStyle("-fx-background-color: transparent");
 		settingsSliders.getStylesheets().add(getClass().getResource("Sliders.css").toExternalForm());
         settingsSliders.getChildren().addAll(settingsLabel,masterVol,systemVol,musicVol,videoVol);
 
-        Scene settings = new Scene(settingsSliders,1920,1080);
-        settings.setFill(new ImagePattern(blurredImage));
+		//tab
+		TabPane tabPane = new TabPane();
+		Tab controlsTab = new Tab("Controls");
+		controlsTab.setClosable(false);
+		VBox controlsSlider = new VBox(50);
+		Label brightnessLabel = new Label("Brightness");
+		brightnessLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
+		brightnessLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		HBox brightnessTable = new HBox(50);
+		brightnessTable.getChildren().addAll(brightnessLabel);
+		controlsSlider.getChildren().addAll(brightnessTable);
+		controlsTab.setContent(controlsSlider);
+
+		// Audio Tab
+		Tab audioTab = new Tab("Audio");
+		audioTab.setContent(settingsSliders);
+		audioTab.setClosable(false);
+		audioTab.setStyle("-fx-background-color: transparent");
+
+		tabPane.getTabs().addAll(audioTab, controlsTab);
+
+        Scene settings = new Scene(tabPane,1920,1080);
+		settings.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
+		settings.setFill(new ImagePattern(blurredImage));
         settings.setCursor(Cursor);
 		Button backButtonSettings = new Button("Back");
 		settings.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
@@ -441,6 +471,7 @@ public class View extends Application {
                 primaryStage.close(); // Close the stage when 'Esc' is pressed
             }
         });
+
 		settingsSliders.getChildren().add(backButtonSettings);
 		backButtonSettings.setMaxWidth(100);
 		backButtonSettings.setMaxHeight(80);
@@ -451,7 +482,7 @@ public class View extends Application {
 		backButtonSettings.setOnMouseExited(e -> backButtonSettings.setEffect(null));
 		//backButtonSettings.setTranslateX(140);
 		backButtonSettings.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16; ");
-		backButtonSettings.setTranslateY(140);
+		backButtonSettings.setTranslateY(100);
         Image settingsIc = new Image("Settings.png");
         ImageView settingsIcon = new ImageView(settingsIc);
         settingsIcon.setFitHeight(40);

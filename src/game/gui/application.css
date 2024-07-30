@@ -11,6 +11,15 @@
 /* Glow effect on hover */
 .button:hover {
     box-shadow: 0 0 10px rgba(30, 194, 121, 0.7); /* Green glow effect */
+}.tab-pane {
+     -fx-tab-min-width: 100; /* Adjust tab width */
+     -fx-tab-max-width: 100; /* Adjust tab width */
+     -fx-tab-min-height: 30; /* Adjust tab height */
+     -fx-tab-max-height: 30; /* Adjust tab height */
+     -fx-background-color: #1e1e1e; /* Tab background color */
+ }
+
+.tab {
+    -fx-background-color: #2a2a2a; /* Tab content background color */
+    -fx-text-fill: white; /* Tab text color */
 }
-
-
