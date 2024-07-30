@@ -1,0 +1,21 @@
+/* styles.css */
+.slider .track {
+    -fx-background-color: #d1ede9;
+    -fx-background-radius: 3px;
+    -fx-padding: 0.25em;
+}
+
+.slider .thumb {
+    -fx-background-color: #d1ede9;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+.slider .tick-mark {
+    -fx-stroke: #333; /* Customize if you want different tick mark colors */
+}
+
+.slider .tick-label {
+    -fx-text-fill: #333; /* Customize label color */
+    -fx-font-size: 12px;
+}

@@ -261,11 +261,10 @@ public class View extends Application {
 		Media modeButtonSound = new Media(new File("src/modeButtonSound.mp3").toURI().toString());
 		MediaPlayer mediaPlayer1 = new MediaPlayer(modeButtonSound);
 		Slider systemVolume = new Slider(0, 1, 0.5);
-        systemVolume.setShowTickMarks(true);
-        systemVolume.setShowTickLabels(true);
-        systemVolume.setMajorTickUnit(100);
-        systemVolume.setMaxWidth(100);
-		systemVolume.setCenterShape(true);
+        systemVolume.setShowTickMarks(false);
+        systemVolume.setShowTickLabels(false);
+        systemVolume.setMajorTickUnit(0.25);
+        systemVolume.setPrefWidth(300);
 		mediaPlayer.volumeProperty().bind(systemVolume.valueProperty());
 		mediaPlayer1.volumeProperty().bind(systemVolume.valueProperty());
 		Media defaultMusic = new Media(new File("src/VanguardOfHope.mp3").toURI().toString());
@@ -275,44 +274,82 @@ public class View extends Application {
 		mediaPlayer3 = new MediaPlayer(grumblingMusic);
 		mediaPlayer3.setCycleCount(MediaPlayer.INDEFINITE);
 		Slider musicVolume = new Slider(0, 1, 0.5);
-        musicVolume.setShowTickMarks(true);
-        musicVolume.setShowTickLabels(true);
-        musicVolume.setMajorTickUnit(100);
-        musicVolume.setMaxWidth(100);
-		musicVolume.setCenterShape(true);
+        musicVolume.setShowTickMarks(false);
+        musicVolume.setShowTickLabels(false);
+        musicVolume.setPrefWidth(300);
 		mediaPlayer2.volumeProperty().bind(musicVolume.valueProperty());
 		mediaPlayer3.volumeProperty().bind(musicVolume.valueProperty());
 	    mediaPlayer2.seek(Duration.ZERO); 
 	    mediaPlayer2.play(); 
 		Label settingsLabel = new Label("Game Settings");
-		settingsLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 50; ");
+		settingsLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 40; ");
 		settingsLabel.setTextFill(javafx.scene.paint.Color.WHITE);
 		settingsLabel.setAlignment(Pos.TOP_CENTER);
-		settingsLabel.setTranslateY(-200);
+		settingsLabel.setTranslateY(-150);
+
+		HBox masterVol = new HBox(20);
+		Label masterVolumeLabel = new Label("Master Volume");
+		masterVolumeLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
+		masterVolumeLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		masterVolumeLabel.setTranslateX(-90);
+		Slider masterVolumeSlider = new Slider(0,1,0.5);
+		masterVolumeSlider.setShowTickMarks(false);
+		masterVolumeSlider.setShowTickLabels(false);
+		masterVolumeSlider.setMajorTickUnit(0.25);
+		masterVolumeSlider.setPrefWidth(300);
+		mediaPlayer.volumeProperty().bind(masterVolumeSlider.valueProperty());
+		mediaPlayer1.volumeProperty().bind(masterVolumeSlider.valueProperty());
+//		mediaPlayer2.volumeProperty().bind(masterVolumeSlider.valueProperty());
+//		mediaPlayer3.volumeProperty().bind(masterVolumeSlider.valueProperty());
+		video.volumeProperty().bind(masterVolumeSlider.valueProperty());
 		HBox systemVol = new HBox(20);
 		Label sysVol = new Label("System Volume");
 		sysVol.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
 		sysVol.setTextFill(javafx.scene.paint.Color.WHITE);
-		sysVol.setTranslateY(-13);
-
+		sysVol.setTranslateX(-90);
 
 		Image muteImage = new Image("Mute_Icon.png");
 		ImageView muteIVSys = new ImageView(muteImage);
-		muteIVSys.setFitWidth(40); // Set the width
+		muteIVSys.setFitWidth(20); // Set the width
 		muteIVSys.setPreserveRatio(true);
-		Button muteSystem = new Button();
-		muteSystem.setTranslateY(-13);
-		muteSystem.setGraphic(muteIVSys);
-		muteSystem.setStyle("-fx-background-color: transparent");
-		muteSystem.setOnAction(new EventHandler<ActionEvent>() {
+		Button muteMaster = new Button();
+		ImageView muteIVMas = new ImageView(muteImage);
+		muteIVMas.setFitWidth(20); // Set the width
+		muteIVMas.setPreserveRatio(true);
+		muteMaster.setGraphic(muteIVMas);
+		muteMaster.setBackground(originalBackground);
+		muteMaster.setPadding(new Insets(10));
+		muteMaster.setOnMouseEntered(e -> muteMaster.setEffect(dropShadow));
+		muteMaster.setOnMouseExited(e -> muteMaster.setEffect(null));
+		muteMaster.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
-				if(systemVolume.getValue() == 0)
-					systemVolume.adjustValue(0.5);
+				if(masterVolumeSlider.getValue() == 0)
+					masterVolumeSlider.adjustValue(0.5);
 				else {
-					systemVolume.adjustValue(0);
+					masterVolumeSlider.adjustValue(0);
 					mediaPlayer.seek(Duration.ZERO);
 					mediaPlayer.play();
 				}
+			}
+		});
+		masterVol.setAlignment(Pos.CENTER);
+		masterVol.getChildren().addAll(masterVolumeLabel, muteMaster, masterVolumeSlider);
+		Button muteSystem = new Button();
+		muteSystem.setGraphic(muteIVSys);
+		muteSystem.setBackground(originalBackground);
+		muteSystem.setPadding(new Insets(10));
+		muteSystem.setOnMouseEntered(e -> muteSystem.setEffect(dropShadow));
+		muteSystem.setOnMouseExited(e -> muteSystem.setEffect(null));
+		muteSystem.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				if(systemVolume.getValue() == 0) {
+					systemVolume.adjustValue(0.5);
+					mediaPlayer.seek(Duration.ZERO);
+					mediaPlayer.play();
+				}
+				else
+					systemVolume.adjustValue(0);
+
 			}
 		});
 
@@ -322,15 +359,18 @@ public class View extends Application {
 		Label musVol = new Label("Music Volume");
 		musVol.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
 		musVol.setTextFill(javafx.scene.paint.Color.WHITE);
-		musVol.setTranslateY(-13);
-		musVol.setTranslateX(-14);
+		musVol.setTranslateX(-113);
+		musicVolume.setTranslateX(24);
 		Button muteMusic = new Button();
-		muteMusic.setTranslateY(-13);
+		muteMusic.setTranslateX(21);
 		ImageView muteIVMusic = new ImageView(muteImage);
-		muteIVMusic.setFitWidth(40); // Set the width
+		muteIVMusic.setFitWidth(20); // Set the width
 		muteIVMusic.setPreserveRatio(true);
 		muteMusic.setGraphic(muteIVMusic);
-		muteMusic.setStyle("-fx-background-color: transparent");
+		muteMusic.setBackground(originalBackground);
+		muteMusic.setPadding(new Insets(10));
+		muteMusic.setOnMouseEntered(e -> muteMusic.setEffect(dropShadow));
+		muteMusic.setOnMouseExited(e -> muteMusic.setEffect(null));
 		muteMusic.setOnAction(new EventHandler<ActionEvent>() {
 			public void handle(ActionEvent event) {
 				if(musicVolume.getValue() == 0)
@@ -345,8 +385,43 @@ public class View extends Application {
 			}
 		});
 		musicVol.getChildren().addAll(musVol,muteMusic,musicVolume);
+		HBox videoVol = new HBox(20);
+		Label videoVolumeLabel = new Label("Video Volume");
+		videoVolumeLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 24;");
+		videoVolumeLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		videoVolumeLabel.setTranslateX(-133);
+		Slider videoVolumeSlider = new Slider(0,1,0.5);
+		videoVolumeSlider.setShowTickMarks(false);
+		videoVolumeSlider.setShowTickLabels(false);
+		videoVolumeSlider.setPrefWidth(300);
+		video.volumeProperty().bind(videoVolumeSlider.valueProperty());
+		Button muteVideo = new Button();
+//		muteVideo.setTranslateX(21);
+		ImageView muteIVVideo = new ImageView(muteImage);
+		muteIVVideo.setFitWidth(20); // Set the width
+		muteIVVideo.setPreserveRatio(true);
+		muteVideo.setGraphic(muteIVVideo);
+		muteVideo.setBackground(originalBackground);
+		muteVideo.setPadding(new Insets(10));
+		muteVideo.setOnMouseEntered(e -> muteVideo.setEffect(dropShadow));
+		muteVideo.setOnMouseExited(e -> muteVideo.setEffect(null));
+		muteVideo.setOnAction(new EventHandler<ActionEvent>() {
+			public void handle(ActionEvent event) {
+				if(videoVolumeSlider.getValue() == 0)
+					videoVolumeSlider.adjustValue(0.5);
+				else
+					videoVolumeSlider.adjustValue(0);
+				if(systemVolume.getValue() != 0)
+				{
+					mediaPlayer.seek(Duration.ZERO);
+					mediaPlayer.play();
+				}
+			}});
+		videoVol.setAlignment(Pos.CENTER);
+		videoVol.setTranslateX(20);
+		videoVol.getChildren().addAll(videoVolumeLabel,muteVideo,videoVolumeSlider);
 		Image blurredImage = new Image("blurredBackg.jpeg");
-        VBox settingsSliders = new VBox(30);
+        VBox settingsSliders = new VBox(50);
 //        settingsSliders.setLayoutX(750);
 //        settingsSliders.setLayoutY(500);
 		settingsSliders.setAlignment(Pos.CENTER);
@@ -354,7 +429,8 @@ public class View extends Application {
 		systemVol.setAlignment(Pos.CENTER);
 		musicVol.setAlignment(Pos.CENTER);
 		settingsSliders.setStyle("-fx-background-color: transparent");
-        settingsSliders.getChildren().addAll(settingsLabel,systemVol,musicVol);
+		settingsSliders.getStylesheets().add(getClass().getResource("Sliders.css").toExternalForm());
+        settingsSliders.getChildren().addAll(settingsLabel,masterVol,systemVol,musicVol,videoVol);
 
         Scene settings = new Scene(settingsSliders,1920,1080);
         settings.setFill(new ImagePattern(blurredImage));
@@ -375,6 +451,7 @@ public class View extends Application {
 		backButtonSettings.setOnMouseExited(e -> backButtonSettings.setEffect(null));
 		//backButtonSettings.setTranslateX(140);
 		backButtonSettings.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16; ");
+		backButtonSettings.setTranslateY(140);
         Image settingsIc = new Image("Settings.png");
         ImageView settingsIcon = new ImageView(settingsIc);
         settingsIcon.setFitHeight(40);
