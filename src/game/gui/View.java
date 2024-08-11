@@ -254,7 +254,7 @@ public class View extends Application {
 		logo.setFitWidth(500);
 		logo.setLayoutX(558.0);
 		logo.setLayoutY(311.0);
-		logo.setTranslateY(-45);
+		logo.setTranslateY(-60);
 		
 		Media defaultButtonSound = new Media(new File("src/defaultButtonSound.mp3").toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(defaultButtonSound);
