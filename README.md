@@ -23,10 +23,11 @@
 
 ### Screenshots
 
-![Start Page](https://github.com/user-attachments/assets/d97bb126-2a33-44f7-a787-1f6ada9bbe43)
+![Start Page](https://github.com/user-attachments/assets/bc265d6d-3f15-4cbf-b87f-e29254ad5b02)
 ![Video Scene](https://github.com/user-attachments/assets/9b627df8-85e3-4f4f-ab55-ac9940024452)
-![Easy Mode](https://github.com/user-attachments/assets/90a7274b-3e78-4542-9c7e-4a8f6a199175)
-![Hard Mode](https://github.com/user-attachments/assets/590f7b41-acbd-458b-9130-a03727361bcd)
+![Easy Mode](https://github.com/user-attachments/assets/de7dcf9e-2a61-4da6-8db3-edc457c1faae)
+![Hard Mode](https://github.com/user-attachments/assets/03e73af8-93e4-44b5-8460-2a1c6145bb5f)
+
 
 ### Gameplay Video
 
