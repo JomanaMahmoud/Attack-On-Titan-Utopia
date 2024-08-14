@@ -155,4 +155,26 @@ Each turn, players can choose to deploy weapons or pass. Turn sequence involves 
 - **Inspired by**: *Attack on Titan* anime series
 - **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
 
+## Media Credits
+
+All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes. If you plan to use this project for commercial purposes, you must ensure you have obtained the necessary licenses or permissions for any copyrighted media.
+
+## Commercial Use
+
+If you intend to use this project for commercial purposes, please follow these steps:
+
+1. **Contact**: Reach out to the project owner at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use.
+2. **Agreement**: A separate agreement must be made with the project owner regarding commercial use. This may include terms for revenue sharing or other considerations.
+
+## Contribution Guidelines
+
+Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owner and will be incorporated at the project owner's discretion.
+
+## Disclaimer
+
+This project is provided "as is," without warranty of any kind. The project owner makes no representations or warranties regarding the use, modification, or commercial application of the project.
+
+## Termination
+
+Failure to comply with the terms of this license may result in termination of your rights to use the project. Upon termination, you must cease all use of the project and destroy all copies in your possession.
 ---
