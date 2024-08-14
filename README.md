@@ -163,31 +163,32 @@ All media used in this project, including images and videos, are credited to the
 
 If you intend to use this project for commercial purposes, please follow these steps:
 
-1. **Contact**: Reach out to the project owner at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use.
-2. **Agreement**: A separate agreement must be made with the project owner regarding commercial use. This may include terms for revenue sharing or other considerations.
+1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use.
+2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
 
 ## Contribution Guidelines
 
-Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owner and will be incorporated at the project owner's discretion.
-
-## Disclaimer
-
-This project is provided "as is," without warranty of any kind. The project owner makes no representations or warranties regarding the use, modification, or commercial application of the project.
+Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owners and will be incorporated at the project owner's discretion.
 
 ## License
 
-This project is licensed under the **Attack On Titan: Utopia** License - Version 1.2. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE) file for details.
 
 ### License Summary
 
 - **License Grant**: You are granted a non-exclusive, worldwide, royalty-free, perpetual license to use, modify, distribute, and contribute to the project.
 - **Contributions**: Contributions must be submitted via GitHub pull requests and are subject to review and approval.
-- **Commercial Use**: Requires separate agreement with the project owner. Notification and licensing for commercial use are required.
+- **Commercial Use**: Requires separate agreement with the project owners. Notification and licensing for commercial use are required.
 - **Attribution**: Proper credit must be given to the project and its media sources.
 - **Disclaimer**: The project is provided "as is" without warranties.
 - **Termination**: License may be terminated for non-compliance.
 
 For full license terms, please refer to the [LICENSE](./LICENSE) file.
+
+## Disclaimer
+
+This project is provided "as is," without warranty of any kind. The project owners makes no representations or warranties regarding the use, modification, or commercial application of the project.
+
 
 ## Termination
 
