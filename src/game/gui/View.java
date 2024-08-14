@@ -21,11 +21,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Random;
+import java.util.*;
 //import org.junit.experimental.ParallelComputer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -97,12 +93,12 @@ public class View extends Application {
     private StackPane root7 = new StackPane();
     private Scene s1 = new Scene(root7,1920,1080);
     private ImageCursor Cursor;
-    private ArrayList<ImageView> titans1 = new ArrayList<>();
-    private ArrayList<ImageView> titans2 = new ArrayList<>();
-    private ArrayList<ImageView> titans3 = new ArrayList<>();
-    private ArrayList<Label> titans1labels = new ArrayList<>();
-    private ArrayList<Label> titans2labels = new ArrayList<>();
-    private ArrayList<Label> titans3labels = new ArrayList<>();
+    private HashMap<Titan,ImageView> titans1 = new HashMap<Titan,ImageView>();
+    private HashMap<Titan,ImageView> titans2 = new HashMap<Titan,ImageView>();
+    private HashMap<Titan,ImageView> titans3 = new HashMap<Titan,ImageView>();
+    private HashMap<Titan,Label> titans1labels = new HashMap<Titan,Label>();
+    private HashMap<Titan,Label> titans2labels = new HashMap<Titan,Label>();
+    private HashMap<Titan,Label> titans3labels = new HashMap<Titan,Label>();
     
     private ArrayList<ImageView> titans1h = new ArrayList<>();
     private ArrayList<ImageView> titans2h = new ArrayList<>();
@@ -1691,6 +1687,9 @@ public class View extends Application {
 		        Random rand = new Random();
 	            random = rand.nextInt(-30,25);
 				titan = leastDangerousLane.getTitans().peek();
+				if (titan == null) {
+					break; // No more Titans in the lane to spawn
+				}
 	            if(titan instanceof PureTitan)
 	            {	
 	        		ImageView pure = new ImageView(pureTitan); 
@@ -1699,12 +1698,12 @@ public class View extends Application {
 	        		health1.setTranslateY(random-25);
 	        		health1.setTranslateX(730);
 	            	lane1weapon.getChildren().addAll(pure,health1);
-	            	pure.setTranslateX(730);
+	            	pure.setTranslateX(700);
 	            	pure.setTranslateY(random);
 	        		pure.setFitHeight(15*4);
 	        		pure.setFitWidth(10*4);
-	        		titans1.add(pure);
-	        		titans1labels.add(health1);
+	        		titans1.put(titan,pure);
+	        		titans1labels.put(titan,health1);
 					move(pure,health1,10);
 	            }
 	            if(titan instanceof AbnormalTitan)
@@ -1719,8 +1718,8 @@ public class View extends Application {
 	            	abnormal.setTranslateY(random);
 	        		abnormal.setFitHeight(10*4);
 	        		abnormal.setFitWidth(10*4);
-	        		titans1.add(abnormal);
-	        		titans1labels.add(health2);
+	        		titans1.put(titan,abnormal);
+	        		titans1labels.put(titan,health2);
 					move(abnormal,health2,15);
 	            }
 	            if(titan instanceof ArmoredTitan)
@@ -1735,8 +1734,8 @@ public class View extends Application {
 	            	armored.setTranslateY(random);
 	        		armored.setFitHeight(15*4);
 	        		armored.setFitWidth(10*4);
-	        		titans1.add(armored);
-	        		titans1labels.add(health3);
+	        		titans1.put(titan,armored);
+	        		titans1labels.put(titan,health3);
 					move(armored,health3,10);
 	            }
 	            if(titan instanceof ColossalTitan)
@@ -1751,8 +1750,8 @@ public class View extends Application {
 	            	colossal.setTranslateY(random);
 	        		colossal.setFitHeight(60*2);
 	        		colossal.setFitWidth(10*6);
-	        		titans1.add(colossal);
-	        		titans1labels.add(health4);
+	        		titans1.put(titan,colossal);
+	        		titans1labels.put(titan,health4);
 					move(colossal,health4,5);
 	            }
 			}
@@ -1766,6 +1765,9 @@ public class View extends Application {
 		        Random rand = new Random();
 	            random = rand.nextInt(-30,25);
 				titan = leastDangerousLane.getTitans().peek();
+				if (titan == null) {
+					break; // No more Titans in the lane to spawn
+				}
 	            if(titan instanceof PureTitan)
 	            {	
 	        		ImageView pure = new ImageView(pureTitan); 
@@ -1778,8 +1780,8 @@ public class View extends Application {
 	            	pure.setTranslateY(random);
 	        		pure.setFitHeight(15*4);
 	        		pure.setFitWidth(10*4);
-	        		titans2.add(pure);
-	        		titans2labels.add(health1);
+	        		titans2.put(titan,pure);
+	        		titans2labels.put(titan,health1);
 					move(pure,health1,500);
 	            }
 	            if(titan instanceof AbnormalTitan)
@@ -1794,8 +1796,8 @@ public class View extends Application {
 	            	abnormal.setTranslateY(random);
 	        		abnormal.setFitHeight(10*4);
 	        		abnormal.setFitWidth(10*4);
-	        		titans2.add(abnormal);
-	        		titans2labels.add(health2);
+	        		titans2.put(titan,abnormal);
+	        		titans2labels.put(titan,health2);
 					move(abnormal,health2,500);
 	            }
 	            if(titan instanceof ArmoredTitan)
@@ -1810,8 +1812,8 @@ public class View extends Application {
 	            	armored.setTranslateY(random);
 	        		armored.setFitHeight(15*4);
 	        		armored.setFitWidth(10*4);
-	        		titans2.add(armored);
-	        		titans2labels.add(health3);
+	        		titans2.put(titan,armored);
+	        		titans2labels.put(titan,health3);
 					move(armored,health3,500);
 	            }
 	            if(titan instanceof ColossalTitan)
@@ -1826,8 +1828,8 @@ public class View extends Application {
 	            	colossal.setTranslateY(random);
 	        		colossal.setFitHeight(60*2);
 	        		colossal.setFitWidth(10*6);
-	        		titans2.add(colossal);
-	        		titans2labels.add(health4);
+	        		titans2.put(titan,colossal);
+	        		titans2labels.put(titan,health4);
 					move(colossal,health4,500);
 	            }
 			}
@@ -1840,6 +1842,9 @@ public class View extends Application {
 		        Random rand = new Random();
 	            random = rand.nextInt(-30,25);
 				titan = leastDangerousLane.getTitans().peek();
+				if (titan == null) {
+					break; // No more Titans in the lane to spawn
+				}
 	            if(titan instanceof PureTitan)
 	            {	
 	        		ImageView pure = new ImageView(pureTitan);
@@ -1852,8 +1857,8 @@ public class View extends Application {
 	            	pure.setTranslateY(random);
 	        		pure.setFitHeight(15*4);
 	        		pure.setFitWidth(10*4);
-	        		titans2.add(pure);
-	        		titans2labels.add(health1);
+	        		titans2.put(titan,pure);
+	        		titans2labels.put(titan,health1);
 					move(pure,health1,500);
 	            }
 	            if(titan instanceof AbnormalTitan)
@@ -1868,8 +1873,8 @@ public class View extends Application {
 	            	abnormal.setTranslateY(random);
 	        		abnormal.setFitHeight(10*4);
 	        		abnormal.setFitWidth(10*4);
-	        		titans2.add(abnormal);
-	        		titans2labels.add(health2);
+	        		titans2.put(titan,abnormal);
+	        		titans2labels.put(titan,health2);
 					move(abnormal,health2,500);
 	            }
 	            if(titan instanceof ArmoredTitan)
@@ -1884,8 +1889,8 @@ public class View extends Application {
 	            	armored.setTranslateY(random);
 	        		armored.setFitHeight(15*4);
 	        		armored.setFitWidth(10*4);
-	        		titans2.add(armored);
-	        		titans2labels.add(health3);
+	        		titans2.put(titan,armored);
+	        		titans2labels.put(titan,health3);
 					move(armored,health3,500);
 	            }
 	            if(titan instanceof ColossalTitan)
@@ -1900,8 +1905,8 @@ public class View extends Application {
 	            	colossal.setTranslateY(random);
 	        		colossal.setFitHeight(60*2);
 	        		colossal.setFitWidth(10*6);
-	        		titans2.add(colossal);
-	        		titans2labels.add(health4);
+	        		titans2.put(titan,colossal);
+	        		titans2labels.put(titan,health4);
 					move(colossal,health4,500);
 	            }
 			}
@@ -2294,18 +2299,20 @@ public class View extends Application {
 
 	public static void move(ImageView Titan,Label Health,int Speed)
 	{
-		TranslateTransition translate1 = new TranslateTransition();
-		translate1.setByX(-50);
-		translate1.setDuration(Duration.millis(Speed));
-		translate1.setCycleCount(1);
-		translate1.setNode(Titan);
-		translate1.play();
-		TranslateTransition translate2 = new TranslateTransition();
-		translate2.setByX(-50);
-		translate2.setDuration(Duration.millis(Speed));
-		translate2.setCycleCount(1);
-		translate2.setNode(Health);
-		translate2.play();
+
+			TranslateTransition translate1 = new TranslateTransition();
+			translate1.setByX(-50);
+			translate1.setDuration(Duration.millis(Speed));
+			translate1.setCycleCount(1);
+			translate1.setNode(Titan);
+			translate1.play();
+			TranslateTransition translate2 = new TranslateTransition();
+			translate2.setByX(-50);
+			translate2.setDuration(Duration.millis(Speed));
+			translate2.setCycleCount(1);
+			translate2.setNode(Health);
+			translate2.play();
+
 	}
 	
 	public void updateall()
@@ -2394,23 +2401,54 @@ public class View extends Application {
 			displayAlertGameOver("Game Over", "Your Score is: " + battle.getScore());
 		}	
 	}
-	
-	public void moveTitansEasy()
-	{
-		for(int i = 0; i < titans1.size();i++)
-		{
-			move(titans1.get(i), titans1labels.get(i), 500);
-			titans1labels.get(i).setText("Health="+battle.getOriginalLanes().get(0).getTitans().peek().getCurrentHealth());
+
+	public void moveTitansEasy() {
+		// Process titans1
+		List<Titan> defeatedTitans1 = new ArrayList<>();
+		for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
+			if (entry.getKey().isDefeated()) {
+				lane1weapon.getChildren().removeAll(entry.getValue(), titans1labels.get(entry.getKey()));
+				defeatedTitans1.add(entry.getKey());
+			} else {
+				move(entry.getValue(), titans1labels.get(entry.getKey()), 500);
+				titans1labels.get(entry.getKey()).setText("Health=" + entry.getKey().getCurrentHealth());
+			}
 		}
-		for(int i = 0; i < titans2.size();i++)
-		{
-			move(titans2.get(i), titans2labels.get(i), 500);
-			titans2labels.get(i).setText("Health="+battle.getOriginalLanes().get(1).getTitans().peek().getCurrentHealth());
+		for (Titan titan : defeatedTitans1) {
+			titans1.remove(titan);
+			titans1labels.remove(titan);
 		}
-		for(int i = 0; i < titans3.size();i++)
-		{
-			move(titans3.get(i), titans3labels.get(i), 500);
-			titans3labels.get(i).setText("Health="+battle.getOriginalLanes().get(2).getTitans().peek().getCurrentHealth());
+
+		// Process titans2
+		List<Titan> defeatedTitans2 = new ArrayList<>();
+		for (Map.Entry<Titan, ImageView> entry : titans2.entrySet()) {
+			if (entry.getKey().isDefeated()) {
+				lane2weapon.getChildren().removeAll(entry.getValue(), titans2labels.get(entry.getKey()));
+				defeatedTitans2.add(entry.getKey());
+			} else {
+				move(entry.getValue(), titans2labels.get(entry.getKey()), 500);
+				titans2labels.get(entry.getKey()).setText("Health=" + entry.getKey().getCurrentHealth());
+			}
+		}
+		for (Titan titan : defeatedTitans2) {
+			titans2.remove(titan);
+			titans2labels.remove(titan);
+		}
+
+		// Process titans3
+		List<Titan> defeatedTitans3 = new ArrayList<>();
+		for (Map.Entry<Titan, ImageView> entry : titans3.entrySet()) {
+			if (entry.getKey().isDefeated()) {
+				lane3weapon.getChildren().removeAll(entry.getValue(), titans3labels.get(entry.getKey()));
+				defeatedTitans3.add(entry.getKey());
+			} else {
+				move(entry.getValue(), titans3labels.get(entry.getKey()), 500);
+				titans3labels.get(entry.getKey()).setText("Health=" + entry.getKey().getCurrentHealth());
+			}
+		}
+		for (Titan titan : defeatedTitans3) {
+			titans3.remove(titan);
+			titans3labels.remove(titan);
 		}
 	}
 	
@@ -2490,10 +2528,12 @@ public class View extends Application {
         alertStage.setScene(scene);
         alertStage.show();
     }
+
 	public static void main(String[] args) {
 		launch(args);
 		
 	}
+
 }
  class KeyEventFilter implements javafx.event.EventHandler<KeyEvent> {
         private final Stage stage;
