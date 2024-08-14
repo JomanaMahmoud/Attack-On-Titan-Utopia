@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted The Position of the Attack On Titan Logo so that it is not very close to the game buttons, reaching more comfortable visibility.">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -17,14 +17,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="4-fixing-settings-page" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/yehiarasheed/Attack-On-Titan-Utopia.git&quot;,
-    &quot;accountId&quot;: &quot;730ff3cc-451a-420e-8d55-39e654705bae&quot;
+    &quot;accountId&quot;: &quot;d4bb5b6f-1cf7-44f7-a01d-e0400eff84a5&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -59,11 +58,10 @@
     "Notification.DisplayName-DoNotAsk-Legacy Library": "Legacy library depends on IDE installation",
     "Notification.DoNotAsk-Legacy Library": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "6-adjusting-logo-in-start-page",
+    "git-widget-placeholder": "9-change-purchase-and-pass-buttons",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia",
-    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,11 +74,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="View" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
@@ -127,14 +120,7 @@
       <workItem from="1722107871436" duration="13045000" />
       <workItem from="1722121823311" duration="903000" />
       <workItem from="1722151699423" duration="574000" />
-      <workItem from="1722152306555" duration="2500000" />
-      <workItem from="1722156320374" duration="149000" />
-      <workItem from="1722159492606" duration="3245000" />
-      <workItem from="1722166419553" duration="946000" />
-      <workItem from="1722179444858" duration="346000" />
-      <workItem from="1722249451239" duration="3831000" />
-      <workItem from="1722268654478" duration="2694000" />
-      <workItem from="1722333084550" duration="2550000" />
+      <workItem from="1722152306555" duration="362000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -144,23 +130,7 @@
       <option name="project" value="LOCAL" />
       <updated>1722112520085</updated>
     </task>
-    <task id="LOCAL-00002" summary="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;">
-      <option name="closed" value="true" />
-      <created>1722153518979</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1722153518979</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it">
-      <option name="closed" value="true" />
-      <created>1722272023659</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1722272023659</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,9 +166,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
-    <MESSAGE value="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;" />
-    <MESSAGE value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
-    <MESSAGE value="Adjusted The Position of the Attack On Titan Logo so that it is not very close to the game buttons, reaching more comfortable visibility." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted The Position of the Attack On Titan Logo so that it is not very close to the game buttons, reaching more comfortable visibility." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
   </component>
 </project>

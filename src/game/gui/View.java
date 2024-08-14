@@ -619,8 +619,8 @@ public class View extends Application {
 		root4.getChildren().add(5,dangerlevel3);
 		root4.getChildren().add(6,lane3weapon);
 		HBox purchaseAndPass = new HBox(20);
-		Button purchase = new Button("Purchase");
-		Button pass = new Button("Pass");
+		Button purchase = new Button("Purchase Weapon");
+		Button pass = new Button("Pass Turn");
 		purchase.setFont(font);
 		purchase.setBackground(originalBackground);
 		purchase.setPadding(new Insets(10));
@@ -632,6 +632,8 @@ public class View extends Application {
 		pass.setOnMouseEntered(e -> pass.setEffect(dropShadow));
 		pass.setOnMouseExited(e -> pass.setEffect(null));
 		purchaseAndPass.setAlignment(Pos.CENTER);
+		purchase.setAlignment(Pos.CENTER);
+		pass.setAlignment(Pos.CENTER);
 		Button easySettingsButton = new Button();
 		easySettingsButton.setGraphic(settingsIcon);
 		easySettingsButton.setPrefHeight(40);
@@ -1136,8 +1138,8 @@ public class View extends Application {
 		wallHealth5H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
 		HBox purchaseAndPassH = new HBox(20);
-		Button purchaseH = new Button("Purchase");
-		Button passH = new Button("Pass");
+		Button purchaseH = new Button("Purchase Weapon");
+		Button passH = new Button("Pass Turn");
 		purchaseH.setFont(font);
 		purchaseH.setBackground(originalBackground);
 		purchaseH.setPadding(new Insets(10));
@@ -1149,6 +1151,11 @@ public class View extends Application {
 		passH.setOnMouseEntered(e -> passH.setEffect(dropShadow));
 		passH.setOnMouseExited(e -> passH.setEffect(null));
 		purchaseAndPassH.setAlignment(Pos.CENTER);
+		purchaseH.setAlignment(Pos.CENTER);
+		purchaseH.setTranslateY(2);
+		//purchaseH.setPrefHeight(purchaseH.getHeight()-20);
+		passH.setAlignment(Pos.CENTER);
+		passH.setTranslateY(2);
 		Button hardSettingsButton = new Button();
 		hardSettingsButton.setGraphic(settingsIcon);
 		hardSettingsButton.setPrefHeight(40);
