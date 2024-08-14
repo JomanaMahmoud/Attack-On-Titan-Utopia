@@ -25,8 +25,8 @@
 
 ![Start Page](https://github.com/user-attachments/assets/7a3a9122-ab7b-4b66-b678-c23add98bf9c)
 ![Video Scene](https://github.com/user-attachments/assets/9b627df8-85e3-4f4f-ab55-ac9940024452)
-![Easy Mode](https://github.com/user-attachments/assets/de7dcf9e-2a61-4da6-8db3-edc457c1faae)
-![Hard Mode](https://github.com/user-attachments/assets/03e73af8-93e4-44b5-8460-2a1c6145bb5f)
+![Easy Mode](https://github.com/user-attachments/assets/6250c264-6a35-4805-b2be-a9a378804ea9)
+![Hard Mode](https://github.com/user-attachments/assets/fbc9c68d-e318-4007-b0ee-6fbb0c733c5d)
 
 
 ### Gameplay Video
