@@ -174,6 +174,21 @@ Contributions to this project are welcome. Please submit contributions via Githu
 
 This project is provided "as is," without warranty of any kind. The project owner makes no representations or warranties regarding the use, modification, or commercial application of the project.
 
+## License
+
+This project is licensed under the **Attack On Titan: Utopia** License - Version 1.2. See the [LICENSE](./LICENSE) file for details.
+
+### License Summary
+
+- **License Grant**: You are granted a non-exclusive, worldwide, royalty-free, perpetual license to use, modify, distribute, and contribute to the project.
+- **Contributions**: Contributions must be submitted via GitHub pull requests and are subject to review and approval.
+- **Commercial Use**: Requires separate agreement with the project owner. Notification and licensing for commercial use are required.
+- **Attribution**: Proper credit must be given to the project and its media sources.
+- **Disclaimer**: The project is provided "as is" without warranties.
+- **Termination**: License may be terminated for non-compliance.
+
+For full license terms, please refer to the [LICENSE](./LICENSE) file.
+
 ## Termination
 
 Failure to comply with the terms of this license may result in termination of your rights to use the project. Upon termination, you must cease all use of the project and destroy all copies in your possession.
