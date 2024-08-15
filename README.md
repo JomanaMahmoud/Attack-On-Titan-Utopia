@@ -18,7 +18,12 @@
   - [Game Rules](#game-rules)
   - [Turn Actions](#turn-actions)
 - [Credits](#credits)
-
+- [Media Credits](#media-credits)
+- [License](#license)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Commercial Use](#commercial-use)
+- [Disclaimer](#disclaimer)
+- [Termination](#termination)
 ## Preview
 
 ### Screenshots
@@ -159,17 +164,6 @@ Each turn, players can choose to deploy weapons or pass. Turn sequence involves 
 
 All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes. If you plan to use this project for commercial purposes, you must ensure you have obtained the necessary licenses or permissions for any copyrighted media.
 
-## Commercial Use
-
-If you intend to use this project for commercial purposes, please follow these steps:
-
-1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
-2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
-
-## Contribution Guidelines
-
-Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owners and will be incorporated at the project owner's discretion.
-
 ## License
 
 This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE) file for details.
@@ -185,10 +179,20 @@ This project is licensed under the **Attack On Titan: Utopia License - Version 1
 
 For full license terms, please refer to the [LICENSE](./LICENSE) file.
 
+## Contribution Guidelines
+
+Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owners and will be incorporated at the project owner's discretion.
+
+## Commercial Use
+
+If you intend to use this project for commercial purposes, please follow these steps:
+
+1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
+2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
+
 ## Disclaimer
 
 This project is provided "as is," without warranty of any kind. The project owners makes no representations or warranties regarding the use, modification, or commercial application of the project.
-
 
 ## Termination
 
