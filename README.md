@@ -163,7 +163,7 @@ All media used in this project, including images and videos, are credited to the
 
 If you intend to use this project for commercial purposes, please follow these steps:
 
-1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use.
+1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
 2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
 
 ## Contribution Guidelines
