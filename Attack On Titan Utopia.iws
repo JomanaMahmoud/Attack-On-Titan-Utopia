@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it">
-      <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.ipr" afterDir="false" />
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="changed titans to hashmaps but health not updating probably">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/M2 Solution.iml" beforeDir="false" afterPath="$PROJECT_DIR$/M2 Solution.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,30 +53,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.View (1).executor": "Run",
-    "Application.View.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Legacy Library": "Legacy library depends on IDE installation",
-    "Notification.DoNotAsk-Legacy Library": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "5-fixing-titans-movement",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/joman/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.View (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.View.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Legacy Library&quot;: &quot;Legacy library depends on IDE installation&quot;,
+    &quot;Notification.DoNotAsk-Legacy Library&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;5-fixing-titans-movement&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joman/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
@@ -157,6 +155,7 @@
       <workItem from="1722249451239" duration="3831000" />
       <workItem from="1722268654478" duration="2694000" />
       <workItem from="1722333084550" duration="2550000" />
+      <workItem from="1723832963549" duration="3081000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -182,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722272023659</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed titans to hashmaps but health not updating probably">
+      <option name="closed" value="true" />
+      <created>1723671837396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723671837396</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,6 +227,7 @@
     <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
     <MESSAGE value="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;" />
     <MESSAGE value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
+    <MESSAGE value="changed titans to hashmaps but health not updating probably" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed titans to hashmaps but health not updating probably" />
   </component>
 </project>

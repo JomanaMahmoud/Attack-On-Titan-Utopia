@@ -732,7 +732,7 @@ public class View extends Application {
 		selectLane.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 		    mediaPlayer.seek(Duration.ZERO); 
 		    mediaPlayer.play();
-		    spawnTitans();
+		    //spawnTitans();
             // Switch to the corresponding scene based on the selected choice
             if ("Lane 1".equals(newValue)) {
                 // Load and set the scene for Option 1
@@ -1667,6 +1667,113 @@ public class View extends Application {
 		primaryStage.show();
 
 	}
+
+	public void spawnTitansi()
+	{
+		Image pureTitan = new Image("PureTitan.png");
+		Image abnormalTitan = new Image("AbnormalTitan.png");
+		Image armoredTitan = new Image("ArmoredTitan.png");
+		Image colossalTitan = new Image("ColossalTitan.png");
+		Iterator<Titan> lane1Titans =  battle.getOriginalLanes().get(0).getTitans().iterator();
+		Iterator<Titan> lane2Titans =  battle.getOriginalLanes().get(1).getTitans().iterator();
+		Iterator<Titan> lane3Titans =  battle.getOriginalLanes().get(2).getTitans().iterator();
+		int random = 0;
+		Random rand = new Random();
+		random = rand.nextInt(-30,25);
+		while(lane1Titans.hasNext())
+		{
+			for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
+				move(entry.getValue(),titans1labels.get(entry.getKey()),500);
+			}
+			if(!titans1.containsKey(lane1Titans.next()))
+			{
+				ImageView addedTitan = null;
+				if(lane1Titans.next() instanceof PureTitan)
+					addedTitan = new ImageView(pureTitan);
+				if(lane1Titans.next() instanceof AbnormalTitan)
+					addedTitan = new ImageView(abnormalTitan);
+				if(lane1Titans.next() instanceof ArmoredTitan)
+					addedTitan = new ImageView(armoredTitan);
+				if(lane1Titans.next() instanceof ColossalTitan)
+					addedTitan = new ImageView(colossalTitan);
+
+				Label health1 = new Label();
+				health1.setText("Health: " + lane1Titans.next().getCurrentHealth());
+				health1.setTranslateY(random-25);
+				health1.setTranslateX(100);
+				lane1weapon.getChildren().addAll(addedTitan,health1);
+				addedTitan.setTranslateX(700);
+				addedTitan.setTranslateY(random);
+				addedTitan.setFitHeight(15*4);
+				addedTitan.setFitWidth(10*4);
+				titans1.put(lane1Titans.next(),addedTitan);
+				titans1labels.put(lane1Titans.next(),health1);
+			}
+
+		}
+		while(lane2Titans.hasNext())
+		{
+			for (Map.Entry<Titan, ImageView> entry : titans2.entrySet()) {
+				move(entry.getValue(),titans2labels.get(entry.getKey()),500);
+			}
+			if(!titans2.containsKey(lane2Titans.next()))
+			{
+				ImageView addedTitan = null;
+				if(lane2Titans.next() instanceof PureTitan)
+					addedTitan = new ImageView(pureTitan);
+				if(lane2Titans.next() instanceof AbnormalTitan)
+					addedTitan = new ImageView(abnormalTitan);
+				if(lane2Titans.next() instanceof ArmoredTitan)
+					addedTitan = new ImageView(armoredTitan);
+				if(lane2Titans.next() instanceof ColossalTitan)
+					addedTitan = new ImageView(colossalTitan);
+
+				Label health1 = new Label();
+				health1.setText("Health: " + lane2Titans.next().getCurrentHealth());
+				health1.setTranslateY(random-25);
+				health1.setTranslateX(730);
+				lane2weapon.getChildren().addAll(addedTitan,health1);
+				addedTitan.setTranslateX(700);
+				addedTitan.setTranslateY(random);
+				addedTitan.setFitHeight(15*4);
+				addedTitan.setFitWidth(10*4);
+				titans2.put(lane2Titans.next(),addedTitan);
+				titans2labels.put(lane2Titans.next(),health1);
+			}
+		}
+
+		while(lane3Titans.hasNext())
+		{
+			for (Map.Entry<Titan, ImageView> entry : titans3.entrySet()) {
+				move(entry.getValue(),titans3labels.get(entry.getKey()),500);
+			}
+			if(!titans3.containsKey(lane3Titans.next()))
+			{
+				ImageView addedTitan = null;
+				if(lane3Titans.next() instanceof PureTitan)
+					addedTitan = new ImageView(pureTitan);
+				if(lane3Titans.next() instanceof AbnormalTitan)
+					addedTitan = new ImageView(abnormalTitan);
+				if(lane3Titans.next() instanceof ArmoredTitan)
+					addedTitan = new ImageView(armoredTitan);
+				if(lane3Titans.next() instanceof ColossalTitan)
+					addedTitan = new ImageView(colossalTitan);
+
+				Label health1 = new Label();
+				health1.setText("Health: " + lane3Titans.next().getCurrentHealth());
+				health1.setTranslateY(random-25);
+				health1.setTranslateX(730);
+				lane3weapon.getChildren().addAll(addedTitan,health1);
+				addedTitan.setTranslateX(700);
+				addedTitan.setTranslateY(random);
+				addedTitan.setFitHeight(15*4);
+				addedTitan.setFitWidth(10*4);
+				titans3.put(lane3Titans.next(),addedTitan);
+				titans3labels.put(lane3Titans.next(),health1);
+			}
+		}
+
+	}
 // width from above till first lane is 58 pixels, first lane height is 149, same for all lanes too so we need to spawn between 58 and 207
 	public void spawnTitans()
 	{
@@ -1704,7 +1811,7 @@ public class View extends Application {
 	        		pure.setFitWidth(10*4);
 	        		titans1.put(titan,pure);
 	        		titans1labels.put(titan,health1);
-					move(pure,health1,10);
+					move(pure,health1,500);
 	            }
 	            if(titan instanceof AbnormalTitan)
 	            {	
@@ -1720,7 +1827,7 @@ public class View extends Application {
 	        		abnormal.setFitWidth(10*4);
 	        		titans1.put(titan,abnormal);
 	        		titans1labels.put(titan,health2);
-					move(abnormal,health2,15);
+					move(abnormal,health2,500);
 	            }
 	            if(titan instanceof ArmoredTitan)
 	            {	
@@ -1736,7 +1843,7 @@ public class View extends Application {
 	        		armored.setFitWidth(10*4);
 	        		titans1.put(titan,armored);
 	        		titans1labels.put(titan,health3);
-					move(armored,health3,10);
+					move(armored,health3,500);
 	            }
 	            if(titan instanceof ColossalTitan)
 	            {	
@@ -1752,7 +1859,7 @@ public class View extends Application {
 	        		colossal.setFitWidth(10*6);
 	        		titans1.put(titan,colossal);
 	        		titans1labels.put(titan,health4);
-					move(colossal,health4,5);
+					move(colossal,health4,500);
 	            }
 			}
 		}
@@ -1946,7 +2053,7 @@ public class View extends Application {
 	        		pure.setFitWidth(10*4);
 	        		titans1h.add(pure);
 	        		titans1labelsh.add(health1);
-					move(pure,health1,10);
+					move(pure,health1,500);
 	            }
 	            if(titan instanceof AbnormalTitan)
 	            {	
@@ -1962,7 +2069,7 @@ public class View extends Application {
 	        		abnormal.setFitWidth(10*4);
 	        		titans1h.add(abnormal);
 	        		titans1labelsh.add(health2);
-					move(abnormal,health2,15);
+					move(abnormal,health2,500);
 	            }
 	            if(titan instanceof ArmoredTitan)
 	            {	
@@ -1978,7 +2085,7 @@ public class View extends Application {
 	        		armored.setFitWidth(10*4);
 	        		titans1h.add(armored);
 	        		titans1labelsh.add(health3);
-					move(armored,health3,10);
+					move(armored,health3,500);
 	            }
 	            if(titan instanceof ColossalTitan)
 	            {	
@@ -1994,7 +2101,7 @@ public class View extends Application {
 	        		colossal.setFitWidth(10*6);
 	        		titans1h.add(colossal);
 	        		titans1labelsh.add(health4);
-					move(colossal,health4,5);
+					move(colossal,health4,500);
 	            }
 			}
 		}
@@ -2317,7 +2424,7 @@ public class View extends Application {
 	
 	public void updateall()
 	{
-		moveTitansEasy();
+		//moveTitansEasy();
 		
 		currentScore.setText("Current score: " +battle.getScore());
 		currentPhase.setText("Current Phase: " +battle.getBattlePhase());
