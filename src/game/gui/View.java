@@ -1,7 +1,9 @@
 package game.gui;
 
 import javafx.geometry.Insets;
+import javafx.scene.control.*;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -38,10 +40,6 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.ImageCursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,7 +47,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.control.Slider;
 import javafx.scene.media.MediaView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.text.Font;
@@ -453,7 +450,6 @@ public class View extends Application {
         });
 		Cursor = new ImageCursor(cursorImage, cursorImage.getWidth()/2, cursorImage.getHeight()/2);
 	    s3.setCursor(Cursor);
-		//Label instructionsLabel = new Label("Instructions");
 		Button back = new Button("Back");
 		back.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16;");
 		root3.setAlignment(Pos.CENTER);
@@ -464,11 +460,120 @@ public class View extends Application {
 		back.setPadding(new Insets(10));
 		back.setOnMouseEntered(e -> back.setEffect(dropShadow));
 		back.setOnMouseExited(e -> back.setEffect(null));
-		Image Instructionsimage = new Image("InstructionsImage.png");
-		ImageView InstructionsIV = new ImageView(Instructionsimage);
-		InstructionsIV.setFitWidth(1182);
-		InstructionsIV.setFitHeight(662);
-		root3.getChildren().addAll(InstructionsIV,back);
+//		Image Instructionsimage = new Image("InstructionsImage.png");
+//		ImageView InstructionsIV = new ImageView(Instructionsimage);
+//		InstructionsIV.setFitWidth(1182);
+//		InstructionsIV.setFitHeight(662);
+		Label instructionsLabel = new Label("Game Instructions");
+		instructionsLabel.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 43;");
+		instructionsLabel.setTextFill(javafx.scene.paint.Color.WHITE);
+		instructionsLabel.setTranslateY(-10);
+		TextArea instructionsText = new TextArea();
+		instructionsText.setCursor(Cursor);
+		instructionsText.setEditable(false);
+		instructionsText.setWrapText(true);
+		instructionsText.setFont(font);
+		instructionsText.setMaxWidth(1300);
+		instructionsText.setPrefHeight(660);
+		root3.setTranslateY(-35);
+		back.setTranslateY(10);
+		instructionsText.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 18; -fx-highlight-fill: #AA336A;");
+		instructionsText.setText("MAIN OBJECTIVE:\n\n" +
+				"Your goal is to defend the Utopia District walls from the invading titans. This is an endless game with no winning condition. Your final score is determined by the number of titans you defeat and the resources you accumulate before all lanes are lost.\n\n" +
+
+				"GAME SETUP:\n\n" +
+
+				"1. BATTLEFIELD LAYOUT:\n\n" +
+				"   - The battlefield is divided into multiple lanes.\n" +
+				"   - Each lane includes:\n" +
+				"     - A section of the wall that needs defending, which starts with a certain amount of HP (Health Points). If this part of the wall is destroyed, the lane becomes a lost lane.\n" +
+				"     - Weapons that you have deployed to defend the wall.\n" +
+				"     - Titans moving towards the wall.\n\n" +
+
+				"2. GAME MODES:\n\n" +
+
+				"   EASY MODE:\n" +
+				"     - Features 3 lanes.\n" +
+				"     - Titans appear less frequently, and their stats are slightly lower, making it easier to manage and defend against the attacks.\n\n" +
+
+				"   HARD MODE:\n" +
+				"     - Features 5 lanes.\n" +
+				"     - Titans appear more frequently, and their stats are higher, presenting a more challenging experience. Managing multiple lanes becomes more critical.\n\n" +
+
+				"3. PLAYER INTERFACE:\n\n" +
+				"   - You can view all available weapons, including their stats and prices.\n" +
+				"   - You can see your gathered resources, your current score, the remaining HP of all walls, and the HP and distance of each titan.\n" +
+				"   - You can view the queue of approaching titans, which shows the order in which they will enter the lanes.\n\n" +
+
+				"4. LANE DANGER LEVELS:\n\n" +
+				"   - Each lane has a danger level that represents the threat posed by the titans currently in that lane.\n" +
+				"   - DANGER LEVEL CALCULATION:\n" +
+				"     - The danger level of a lane is the sum of the danger levels of all titans currently in that lane.\n" +
+				"     - For example, if a lane has a Pure Titan (Danger Level 1) and an Abnormal Titan (Danger Level 2), the total danger level for that lane would be 3.\n" +
+				"   - Higher danger levels indicate a more critical situation and may require more powerful or additional weapons to manage the threat effectively.\n\n" +
+
+				"ENEMY TITANS:\n\n" +
+
+				"GENERAL STATS:\n\n" +
+				"  - HP (Health Points): The amount of health the titan has.\n" +
+				"  - Damage: The damage the titan inflicts on the wall.\n" +
+				"  - Height: The titan’s height in meters (does not affect gameplay).\n" +
+				"  - Distance from Walls: How far the titan is from the wall.\n" +
+				"  - Speed: The distance the titan moves towards the wall per turn.\n" +
+				"  - Resources Value: The amount of resources you gain for defeating the titan.\n" +
+				"  - Danger Level: The impact of the titan on the danger level of the lane.\n\n" +
+
+				"TYPES AND SPECIAL TRAITS:\n\n" +
+				"  - Pure Titan: HP 100, Damage 15, Speed 10, Resources Value 10, Danger Level 1\n" +
+				"  - Abnormal Titan: HP 100, Damage 20, Speed 15, Resources Value 15, Danger Level 2. Attacks twice per turn.\n" +
+				"  - Armored Titan: HP 200, Damage 85, Speed 10, Resources Value 30, Danger Level 3. Takes only 25% of the intended damage.\n" +
+				"  - Colossal Titan: HP 1000, Damage 100, Speed 5, Resources Value 60, Danger Level 4. Increases speed by 1 distance unit after each movement.\n\n" +
+
+				"FRIENDLY WEAPONS:\n\n" +
+
+				"GENERAL STATS:\n\n" +
+				"  - Damage: The amount of damage the weapon deals to titans.\n" +
+				"  - Price: The cost in resources to purchase and deploy the weapon.\n" +
+				"  - VOLLEY SPREAD CANNON SPECIFIC STATS: Minimum and maximum range of the weapon from the wall.\n\n" +
+
+				"WEAPON TYPES AND ACTIONS:\n\n" +
+				"  - Piercing Cannon: Costs 25 resources, deals 10 damage. Attacks the closest 5 titans in its lane.\n" +
+				"  - Sniper Cannon: Costs 25 resources, deals 35 damage. Attacks the closest titan in its lane.\n" +
+				"  - Volley Spread Cannon: Costs 100 resources, deals 5 damage. Attacks all titans within its specified range.\n" +
+				"  - Wall Spread Cannon: Costs 20 resources, deals 50 damage.\n" +
+				"  - Wall Trap: Costs 75 resources, deals 100 damage. Attacks one titan that has reached the wall.\n\n" +
+
+				"GAME RULES:\n\n" +
+
+				"TITAN MOVEMENT:\n\n" +
+				"  - Titans move closer to the wall each turn by a distance equal to their speed. Colossal Titans gain additional speed each turn.\n\n" +
+
+				"ATTACK ACTIONS:\n\n" +
+				"  - Titans: Attack the wall if they have reached it. Abnormal Titans attack twice per turn.\n" +
+				"  - Weapons: Attack titans in their lane based on the type of weapon.\n\n" +
+
+				"DEFEATED TARGETS:\n\n" +
+				"  - Titans: Removed from the lane, and their resources are added to your total.\n" +
+				"  - Wall Parts: Destroyed if their HP drops to 0, marking the lane as lost. No more titans will spawn in lost lanes.\n\n" +
+
+				"APPROACHING TITANS:\n\n" +
+				"  - Titans not yet in lanes are queued up to enter. The queue refills based on the battle phase and turn count.\n\n" +
+
+				"BATTLE PHASES AND TITAN SPAWNING:\n\n" +
+				"  - Early Phase: 1 titan per turn. Queue refills with Pure, Abnormal, Armored, and Colossal Titans.\n" +
+				"  - Intense Phase: 1 titan per turn. Queue refills with Abnormal, Armored, and Colossal Titans.\n" +
+				"  - Grumbling Phase: 1 titan per turn (doubles every 5 turns). Queue refills with Colossal Titans.\n\n" +
+
+				"WEAPON PURCHASE:\n\n" +
+				"  - Select and deploy weapons based on the resources you have. The weapon’s cost is deducted from your resources.\n\n" +
+
+				"TURN ACTIONS:\n\n" +
+				"  - Each turn, you can choose to purchase and deploy a weapon or pass. After your action, titans move, weapons attack, and then titans attack the wall. New titans are added to lanes, and the game updates the battle phase if needed.\n\n" +
+
+				"LOSING CONDITION:\n\n" +
+				"  - The game ends when all starting lanes are lost (all wall parts are destroyed). Your final score is based on the number of defeated titans and resources collected.\n");
+		s3.getStylesheets().add(getClass().getResource("TextArea.css").toExternalForm());
+		root3.getChildren().addAll(instructionsLabel,instructionsText,back);
 		Instructions.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 16;");
 		back.setAlignment(Pos.BOTTOM_CENTER);
 		s3.setFill(new ImagePattern(blurredImage));
@@ -477,7 +582,7 @@ public class View extends Application {
 			public void handle(ActionEvent event) {
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
-				primaryStage.setScene(s3);		
+				primaryStage.setScene(s3);
 				}
 				});
 				
@@ -485,7 +590,7 @@ public class View extends Application {
 			public void handle(ActionEvent event) {
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
-				primaryStage.setScene(s1);			
+				primaryStage.setScene(s1);
 				}
 				});
 
@@ -619,8 +724,8 @@ public class View extends Application {
 		root4.getChildren().add(5,dangerlevel3);
 		root4.getChildren().add(6,lane3weapon);
 		HBox purchaseAndPass = new HBox(20);
-		Button purchase = new Button("Purchase");
-		Button pass = new Button("Pass");
+		Button purchase = new Button("Purchase Weapon");
+		Button pass = new Button("Pass Turn");
 		purchase.setFont(font);
 		purchase.setBackground(originalBackground);
 		purchase.setPadding(new Insets(10));
@@ -632,6 +737,8 @@ public class View extends Application {
 		pass.setOnMouseEntered(e -> pass.setEffect(dropShadow));
 		pass.setOnMouseExited(e -> pass.setEffect(null));
 		purchaseAndPass.setAlignment(Pos.CENTER);
+		purchase.setAlignment(Pos.CENTER);
+		pass.setAlignment(Pos.CENTER);
 		Button easySettingsButton = new Button();
 		easySettingsButton.setGraphic(settingsIcon);
 		easySettingsButton.setPrefHeight(40);
@@ -1136,8 +1243,8 @@ public class View extends Application {
 		wallHealth5H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
 		HBox purchaseAndPassH = new HBox(20);
-		Button purchaseH = new Button("Purchase");
-		Button passH = new Button("Pass");
+		Button purchaseH = new Button("Purchase Weapon");
+		Button passH = new Button("Pass Turn");
 		purchaseH.setFont(font);
 		purchaseH.setBackground(originalBackground);
 		purchaseH.setPadding(new Insets(10));
@@ -1149,6 +1256,11 @@ public class View extends Application {
 		passH.setOnMouseEntered(e -> passH.setEffect(dropShadow));
 		passH.setOnMouseExited(e -> passH.setEffect(null));
 		purchaseAndPassH.setAlignment(Pos.CENTER);
+		purchaseH.setAlignment(Pos.CENTER);
+		purchaseH.setTranslateY(2);
+		//purchaseH.setPrefHeight(purchaseH.getHeight()-20);
+		passH.setAlignment(Pos.CENTER);
+		passH.setTranslateY(2);
 		Button hardSettingsButton = new Button();
 		hardSettingsButton.setGraphic(settingsIcon);
 		hardSettingsButton.setPrefHeight(40);
