@@ -18,15 +18,23 @@
   - [Game Rules](#game-rules)
   - [Turn Actions](#turn-actions)
 - [Credits](#credits)
-
+- [Media Credits](#media-credits)
+- [License](#license)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Commercial Use](#commercial-use)
+- [Disclaimer](#disclaimer)
+- [Termination](#termination)
 ## Preview
 
 ### Screenshots
 
-![Start Page](https://github.com/user-attachments/assets/d97bb126-2a33-44f7-a787-1f6ada9bbe43)
+![Start Page](https://github.com/user-attachments/assets/7a3a9122-ab7b-4b66-b678-c23add98bf9c)
 ![Video Scene](https://github.com/user-attachments/assets/9b627df8-85e3-4f4f-ab55-ac9940024452)
-![Easy Mode](https://github.com/user-attachments/assets/90a7274b-3e78-4542-9c7e-4a8f6a199175)
-![Hard Mode](https://github.com/user-attachments/assets/590f7b41-acbd-458b-9130-a03727361bcd)
+![Game Settings](https://github.com/user-attachments/assets/d6b3176f-9bc9-4664-961f-01ff81a9895e)
+![Game Instructions](https://github.com/user-attachments/assets/43001df5-359c-4863-8112-17597fbf32a3)
+![Easy Mode](https://github.com/user-attachments/assets/6250c264-6a35-4805-b2be-a9a378804ea9)
+![Hard Mode](https://github.com/user-attachments/assets/fbc9c68d-e318-4007-b0ee-6fbb0c733c5d)
+
 
 ### Gameplay Video
 
@@ -154,4 +162,41 @@ Each turn, players can choose to deploy weapons or pass. Turn sequence involves 
 - **Inspired by**: *Attack on Titan* anime series
 - **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
 
+## Media Credits
+
+All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes. If you plan to use this project for commercial purposes, you must ensure you have obtained the necessary licenses or permissions for any copyrighted media.
+
+## License
+
+This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE) file for details.
+
+### License Summary
+
+- **License Grant**: You are granted a non-exclusive, worldwide, royalty-free, perpetual license to use, modify, distribute, and contribute to the project.
+- **Contributions**: Contributions must be submitted via GitHub pull requests and are subject to review and approval.
+- **Commercial Use**: Requires separate agreement with the project owners. Notification and licensing for commercial use are required.
+- **Attribution**: Proper credit must be given to the project and its media sources.
+- **Disclaimer**: The project is provided "as is" without warranties.
+- **Termination**: License may be terminated for non-compliance.
+
+For full license terms, please refer to the [LICENSE](./LICENSE) file.
+
+## Contribution Guidelines
+
+Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owners and will be incorporated at the project owner's discretion.
+
+## Commercial Use
+
+If you intend to use this project for commercial purposes, please follow these steps:
+
+1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
+2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
+
+## Disclaimer
+
+This project is provided "as is," without warranty of any kind. The project owners makes no representations or warranties regarding the use, modification, or commercial application of the project.
+
+## Termination
+
+Failure to comply with the terms of this license may result in termination of your rights to use the project. Upon termination, you must cease all use of the project and destroy all copies in your possession.
 ---

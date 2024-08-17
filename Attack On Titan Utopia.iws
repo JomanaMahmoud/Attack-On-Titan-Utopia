@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Changed the Instructions Text to plaintext for better visual comfort, changed the text highlighting colour to dark pink.">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted The Position of the Attack On Titan Logo so that it is not very close to the game buttons, reaching more comfortable visibility.">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -17,13 +17,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="module-info" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="4-fixing-settings-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +38,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/yehiarasheed/Attack-On-Titan-Utopia.git&quot;,
-    &quot;accountId&quot;: &quot;d4bb5b6f-1cf7-44f7-a01d-e0400eff84a5&quot;
+    &quot;accountId&quot;: &quot;730ff3cc-451a-420e-8d55-39e654705bae&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -58,10 +59,11 @@
     "Notification.DisplayName-DoNotAsk-Legacy Library": "Legacy library depends on IDE installation",
     "Notification.DoNotAsk-Legacy Library": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "3-fixing-instructions-page",
+    "git-widget-placeholder": "6-adjusting-logo-in-start-page",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -74,6 +76,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="View" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
@@ -120,7 +127,14 @@
       <workItem from="1722107871436" duration="13045000" />
       <workItem from="1722121823311" duration="903000" />
       <workItem from="1722151699423" duration="574000" />
-      <workItem from="1722152306555" duration="362000" />
+      <workItem from="1722152306555" duration="2500000" />
+      <workItem from="1722156320374" duration="149000" />
+      <workItem from="1722159492606" duration="3245000" />
+      <workItem from="1722166419553" duration="946000" />
+      <workItem from="1722179444858" duration="346000" />
+      <workItem from="1722249451239" duration="3831000" />
+      <workItem from="1722268654478" duration="2694000" />
+      <workItem from="1722333084550" duration="2550000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -130,44 +144,5 @@
       <option name="project" value="LOCAL" />
       <updated>1722112520085</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="original-files/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
-    <MESSAGE value="Changed the Instructions Text to plaintext for better visual comfort" />
-    <MESSAGE value="Changed the Instructions Text to plaintext for better visual comfort, changed the text highlighting colour to dark pink." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed the Instructions Text to plaintext for better visual comfort, changed the text highlighting colour to dark pink." />
-  </component>
-</project>
+    <task id="LOCAL-00002" summary="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;">
+      <
