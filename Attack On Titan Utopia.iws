@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan" />
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,7 +155,7 @@
       <workItem from="1723832963549" duration="3397000" />
       <workItem from="1724094052972" duration="6036000" />
       <workItem from="1724100239260" duration="90000" />
-      <workItem from="1724104931271" duration="333000" />
+      <workItem from="1724104931271" duration="733000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724105179837</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan">
+      <option name="closed" value="true" />
+      <created>1724105316970</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1724105316970</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +254,7 @@
     <MESSAGE value="changed titans to hashmaps but health not updating probably" />
     <MESSAGE value="used iterator in method spawntitansi" />
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan" />
-    <option name="LAST_COMMIT_MESSAGE" value="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan" />
+    <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
+    <option name="LAST_COMMIT_MESSAGE" value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
   </component>
 </project>

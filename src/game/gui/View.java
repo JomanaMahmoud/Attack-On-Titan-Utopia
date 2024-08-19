@@ -1680,8 +1680,8 @@ public class View extends Application {
 		int random = 0;
 		Random rand = new Random();
 		random = rand.nextInt(-30,25);
-		//loops over the existing titans updates the health and moves and removes any dead titans
-		//also moves the titans according to their speed and adds new titans
+		/*loops over the existing titans updates the health and moves and removes any dead titans
+		also moves the titans according to their speed and adds new titan*/
 
 		for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
 			if(!(entry.getValue().getLayoutX()>=329 && entry.getValue().getLayoutX()<=400)) {
