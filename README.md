@@ -185,6 +185,8 @@ For full license terms, please refer to the [LICENSE](./LICENSE.md) file.
 
 We’re excited that you’re interested in contributing to this project! Whether it's fixing bugs, adding features, or improving documentation, your contributions are welcome and appreciated.
 
+For more detailed information on how to contribute, please check out our [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+
 ### How to Contribute
 
 - **Submit a Pull Request**: If you’ve made changes that you think will benefit the project, please submit a pull request on GitHub.
@@ -192,7 +194,6 @@ We’re excited that you’re interested in contributing to this project! Whethe
 - **Discretion**: Contributions will be incorporated into the project at the discretion of the project owners, but don’t worry—your work is valued, and we’ll do our best to include it if it fits with the project’s goals.
 
 Thank you for helping make this project better!
-
 ## Commercial Use
 
 If you intend to use this project for commercial purposes, please follow these steps:
