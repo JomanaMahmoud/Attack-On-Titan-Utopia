@@ -19,12 +19,9 @@
   - [Game Rules](#game-rules)
   - [Turn Actions](#turn-actions)
 - [Credits](#credits)
-- [Media Credits](#media-credits)
 - [License](#license)
 - [Contribution Guidelines](#contribution-guidelines)
 - [Commercial Use](#commercial-use)
-- [Disclaimer](#disclaimer)
-- [Termination](#termination)
 ## Preview
 
 ### Screenshots
@@ -161,9 +158,6 @@ Each turn, players can choose to deploy weapons or pass. Turn sequence involves 
 ## Credits
 - **Developers**: Jomana Mahmoud, Nada Yasser & Yehia Rasheed.
 - **Inspired by**: *Attack on Titan* anime series
-- **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
-
-## Media Credits
 
 All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes. If you plan to use this project for commercial purposes, you must ensure you have obtained the necessary licenses or permissions for any copyrighted media.
 
@@ -202,11 +196,4 @@ If you intend to use this project for commercial purposes, please follow these s
 1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
 2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
 
-## Disclaimer
-
-This project is provided "as is," without warranty of any kind. The project owners makes no representations or warranties regarding the use, modification, or commercial application of the project.
-
-## Termination
-
-Failure to comply with the terms of this license may result in termination of your rights to use the project. Upon termination, you must cease all use of the project and destroy all copies in your possession.
 ---
