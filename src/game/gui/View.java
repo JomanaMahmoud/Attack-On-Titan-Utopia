@@ -948,6 +948,7 @@ public class View extends Application {
              }
                 
             }
+			spawnTitansi();
         });
 		purchase.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
@@ -955,7 +956,6 @@ public class View extends Application {
 				weaponCodeChosen = 0;
 				currentRescourcesInShop.setText(currentResources.getText());
 				primaryStage.setScene(weaponshop);
-				spawnTitansi();
 			    mediaPlayer.seek(Duration.ZERO); 
 			    mediaPlayer.play();
 				}
@@ -1609,17 +1609,17 @@ public class View extends Application {
              } 
             }
         });
-		purchase.setOnAction(new EventHandler<ActionEvent>() {			
-			public void handle(ActionEvent event) {
-				selectLane.setValue(null);
-				weaponCodeChosen = 0;
-				currentRescourcesInShop.setText(currentResources.getText());
-				primaryStage.setScene(weaponshop);
-				spawnTitansi();
-			    mediaPlayer.seek(Duration.ZERO); 
-			    mediaPlayer.play();
-				}
-		});
+//		purchase.setOnAction(new EventHandler<ActionEvent>() {
+//			public void handle(ActionEvent event) {
+//				selectLane.setValue(null);
+//				weaponCodeChosen = 0;
+//				currentRescourcesInShop.setText(currentResources.getText());
+//				primaryStage.setScene(weaponshop);
+//				spawnTitansi();
+//			    mediaPlayer.seek(Duration.ZERO);
+//			    mediaPlayer.play();
+//				}
+//		});
 		purchaseH.setOnAction(new EventHandler<ActionEvent>() {			
 			public void handle(ActionEvent event) {
 				selectLaneH.setValue(null);
@@ -1682,159 +1682,146 @@ public class View extends Application {
 		random = rand.nextInt(-30,25);
 		/*loops over the existing titans updates the health and moves and removes any dead titans
 		also moves the titans according to their speed and adds new titan*/
+		if(!battle.getOriginalLanes().get(0).isLaneLost()) {
+			for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
 
-		for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
-			if(!(entry.getValue().getLayoutX()>=329 && entry.getValue().getLayoutX()<=400)) {
-				move(entry.getValue(), titans1labels.get(entry.getKey()), entry.getKey().getSpeed() * 50);
+				if (entry.getKey().isDefeated()) {
+					lane1weapon.getChildren().removeAll(entry.getValue(), titans1labels.get(entry.getKey()));
+					titans1.remove(entry.getKey());
+					titans1labels.remove(entry.getKey());
+				} else {
+					if (!entry.getKey().hasReachedTarget()) {
+						move(entry.getValue(), titans1labels.get(entry.getKey()), entry.getKey().getSpeed());
+					}
+					titans1labels.get(entry.getKey()).setText("Health: " + entry.getKey().getCurrentHealth());
+				}
 			}
-			if(entry.getKey().isDefeated())
-			{
-				lane1weapon.getChildren().removeAll(entry.getValue(),titans1labels.get(entry.getKey()));
-				titans1.remove(entry.getKey());
-				titans1labels.remove(entry.getKey());
-			}
-			else
-			{
-				titans1labels.get(entry.getKey()).setText("Health: "+entry.getKey().getCurrentHealth());
+			while (lane1Titans.hasNext()) {
+				Titan titan = lane1Titans.next();
+				if (!titans1.containsKey(titan)) {
+					ImageView addedTitan = null;
+					if (titan instanceof PureTitan)
+						addedTitan = new ImageView(pureTitan);
+					if (titan instanceof AbnormalTitan)
+						addedTitan = new ImageView(abnormalTitan);
+					if (titan instanceof ArmoredTitan)
+						addedTitan = new ImageView(armoredTitan);
+					if (titan instanceof ColossalTitan)
+						addedTitan = new ImageView(colossalTitan);
+
+					Label health1 = new Label();
+					health1.setText("Health: " + titan.getCurrentHealth());
+					health1.setTranslateY(random - 25);
+					health1.setTranslateX(700);
+					lane1weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
+					addedTitan.setTranslateY(random);
+					if (titan instanceof ColossalTitan) {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
+						health1.setTranslateY(random - 50);
+					} else {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
+					}
+					addedTitan.setPreserveRatio(true);
+					titans1.put(titan, addedTitan);
+					titans1labels.put(titan, health1);
+				}
+
 			}
 		}
-		while(lane1Titans.hasNext())
-		{
-			Titan titan = lane1Titans.next();
-			if(!titans1.containsKey(titan))
-			{
-				ImageView addedTitan = null;
-				if(titan instanceof PureTitan)
-					addedTitan = new ImageView(pureTitan);
-				if(titan instanceof AbnormalTitan)
-					addedTitan = new ImageView(abnormalTitan);
-				if(titan instanceof ArmoredTitan)
-					addedTitan = new ImageView(armoredTitan);
-				if(titan instanceof ColossalTitan)
-					addedTitan = new ImageView(colossalTitan);
+		if(!battle.getOriginalLanes().get(1).isLaneLost()) {
+			for (Map.Entry<Titan, ImageView> entry : titans2.entrySet()) {
 
-				Label health1 = new Label();
-				health1.setText("Health: " + titan.getCurrentHealth());
-				health1.setTranslateY(random-25);
-				health1.setTranslateX(700);
-				lane1weapon.getChildren().addAll(addedTitan,health1);
-				addedTitan.setTranslateX(685);
-				addedTitan.setTranslateY(random);
-				if(titan instanceof  ColossalTitan)
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*2);
-					health1.setTranslateY(random-50);
+				if (entry.getKey().isDefeated()) {
+					lane2weapon.getChildren().removeAll(entry.getValue(), titans2labels.get(entry.getKey()));
+					titans2.remove(entry.getKey());
+					titans2labels.remove(entry.getKey());
+				} else {
+					if (!entry.getKey().hasReachedTarget()) {
+						move(entry.getValue(), titans2labels.get(entry.getKey()), entry.getKey().getSpeed());
+					}
+					titans2labels.get(entry.getKey()).setText("Health: " + entry.getKey().getCurrentHealth());
 				}
-				else
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*4);
-				}
-				addedTitan.setPreserveRatio(true);
-				titans1.put(titan,addedTitan);
-				titans1labels.put(titan,health1);
 			}
+			while (lane2Titans.hasNext()) {
 
-		}
-		for (Map.Entry<Titan, ImageView> entry : titans2.entrySet()) {
-			move(entry.getValue(),titans2labels.get(entry.getKey()),entry.getKey().getSpeed()*50);
-			if(entry.getKey().isDefeated())
-			{
-				lane2weapon.getChildren().removeAll(entry.getValue(),titans2labels.get(entry.getKey()));
-				titans2.remove(entry.getKey());
-				titans2labels.remove(entry.getKey());
-			}
-			else {
-				titans2labels.get(entry.getKey()).setText("Health: " + entry.getKey().getCurrentHealth());
+				Titan titan = lane2Titans.next();
+				if (!titans2.containsKey(titan)) {
+					ImageView addedTitan = null;
+					if (titan instanceof PureTitan)
+						addedTitan = new ImageView(pureTitan);
+					if (titan instanceof AbnormalTitan)
+						addedTitan = new ImageView(abnormalTitan);
+					if (titan instanceof ArmoredTitan)
+						addedTitan = new ImageView(armoredTitan);
+					if (titan instanceof ColossalTitan)
+						addedTitan = new ImageView(colossalTitan);
+
+					Label health1 = new Label();
+					health1.setText("Health: " + titan.getCurrentHealth());
+					health1.setTranslateY(random - 25);
+					health1.setTranslateX(700);
+					lane2weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
+					addedTitan.setTranslateY(random);
+					if (titan instanceof ColossalTitan) {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
+						health1.setTranslateY(random - 50);
+					} else {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
+					}
+					addedTitan.setPreserveRatio(true);
+					titans2.put(titan, addedTitan);
+					titans2labels.put(titan, health1);
+				}
 			}
 		}
-		while(lane2Titans.hasNext())
-		{
-
-			Titan titan = lane2Titans.next();
-			if(!titans2.containsKey(titan))
-			{
-				ImageView addedTitan = null;
-				if(titan instanceof PureTitan)
-					addedTitan = new ImageView(pureTitan);
-				if(titan instanceof AbnormalTitan)
-					addedTitan = new ImageView(abnormalTitan);
-				if(titan instanceof ArmoredTitan)
-					addedTitan = new ImageView(armoredTitan);
-				if(titan instanceof ColossalTitan)
-					addedTitan = new ImageView(colossalTitan);
-
-				Label health1 = new Label();
-				health1.setText("Health: " + titan.getCurrentHealth());
-				health1.setTranslateY(random-25);
-				health1.setTranslateX(700);
-				lane2weapon.getChildren().addAll(addedTitan,health1);
-				addedTitan.setTranslateX(685);
-				addedTitan.setTranslateY(random);
-				if(titan instanceof  ColossalTitan)
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*2);
-					health1.setTranslateY(random-50);
+		if(!battle.getOriginalLanes().get(2).isLaneLost()) {
+			for (Map.Entry<Titan, ImageView> entry : titans3.entrySet()) {
+				titans3labels.get(entry.getKey()).setText("Health: " + entry.getKey().getCurrentHealth());
+				if (entry.getKey().isDefeated()) {
+					lane3weapon.getChildren().removeAll(entry.getValue(), titans3labels.get(entry.getKey()));
+					titans3.remove(entry.getKey());
+					titans3labels.remove(entry.getKey());
+				} else {
+					if (!entry.getKey().hasReachedTarget()) {
+						move(entry.getValue(), titans3labels.get(entry.getKey()), entry.getKey().getSpeed());
+					}
+					titans3labels.get(entry.getKey()).setText("Health: " + entry.getKey().getCurrentHealth());
 				}
-				else
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*4);
+			}
+			while (lane3Titans.hasNext()) {
+				Titan titan = lane3Titans.next();
+				if (!titans3.containsKey(titan)) {
+					ImageView addedTitan = null;
+					if (titan instanceof PureTitan)
+						addedTitan = new ImageView(pureTitan);
+					if (titan instanceof AbnormalTitan)
+						addedTitan = new ImageView(abnormalTitan);
+					if (titan instanceof ArmoredTitan)
+						addedTitan = new ImageView(armoredTitan);
+					if (titan instanceof ColossalTitan)
+						addedTitan = new ImageView(colossalTitan);
+
+					Label health1 = new Label();
+					health1.setText("Health: " + titan.getCurrentHealth());
+					health1.setTranslateY(random - 25);
+					health1.setTranslateX(700);
+					lane3weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
+					addedTitan.setTranslateY(random);
+					if (titan instanceof ColossalTitan) {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
+						health1.setTranslateY(random - 50);
+					} else {
+						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
+					}
+					addedTitan.setPreserveRatio(true);
+					titans3.put(titan, addedTitan);
+					titans3labels.put(titan, health1);
 				}
-				addedTitan.setPreserveRatio(true);
-				titans2.put(titan,addedTitan);
-				titans2labels.put(titan,health1);
 			}
 		}
-		for (Map.Entry<Titan, ImageView> entry : titans3.entrySet()) {
-			move(entry.getValue(),titans3labels.get(entry.getKey()),entry.getKey().getSpeed()*50);
-			titans3labels.get(entry.getKey()).setText("Health: "+entry.getKey().getCurrentHealth());
-			if(entry.getKey().isDefeated())
-			{
-				lane3weapon.getChildren().removeAll(entry.getValue(),titans3labels.get(entry.getKey()));
-				titans3.remove(entry.getKey());
-				titans3labels.remove(entry.getKey());
-			}
-			else
-			{
-				titans3labels.get(entry.getKey()).setText("Health: "+entry.getKey().getCurrentHealth());
-			}
-		}
-		while(lane3Titans.hasNext())
-		{
-			Titan titan = lane3Titans.next();
-			if(!titans3.containsKey(titan))
-			{
-				ImageView addedTitan = null;
-				if(titan instanceof PureTitan)
-					addedTitan = new ImageView(pureTitan);
-				if(titan instanceof AbnormalTitan)
-					addedTitan = new ImageView(abnormalTitan);
-				if(titan instanceof ArmoredTitan)
-					addedTitan = new ImageView(armoredTitan);
-				if(titan instanceof ColossalTitan)
-					addedTitan = new ImageView(colossalTitan);
-
-				Label health1 = new Label();
-				health1.setText("Health: " + titan.getCurrentHealth());
-				health1.setTranslateY(random-25);
-				health1.setTranslateX(700);
-				lane3weapon.getChildren().addAll(addedTitan,health1);
-				addedTitan.setTranslateX(685);
-				addedTitan.setTranslateY(random);
-				if(titan instanceof  ColossalTitan)
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*2);
-					health1.setTranslateY(random-50);
-				}
-				else
-				{
-					addedTitan.setFitHeight(titan.getHeightInMeters()*4);
-				}
-				addedTitan.setPreserveRatio(true);
-				titans3.put(titan,addedTitan);
-				titans3labels.put(titan,health1);
-			}
-		}
-
 	}
 // width from above till first lane is 58 pixels, first lane height is 149, same for all lanes too so we need to spawn between 58 and 207
 	public void spawnTitans()
@@ -2470,14 +2457,14 @@ public class View extends Application {
 	{
 
 			TranslateTransition translate1 = new TranslateTransition();
-			translate1.setByX(-50);
-			translate1.setDuration(Duration.millis(Speed));
+			translate1.setByX(-Speed*1.48);
+			translate1.setDuration(Duration.millis(500));
 			translate1.setCycleCount(1);
 			translate1.setNode(Titan);
 			translate1.play();
 			TranslateTransition translate2 = new TranslateTransition();
-			translate2.setByX(-50);
-			translate2.setDuration(Duration.millis(Speed));
+			translate2.setByX(-Speed*1.48);
+			translate2.setDuration(Duration.millis(500));
 			translate2.setCycleCount(1);
 			translate2.setNode(Health);
 			translate2.play();
