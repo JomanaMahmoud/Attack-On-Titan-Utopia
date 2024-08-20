@@ -1,5 +1,6 @@
 # Attack On Titan: Utopia
 <a href="#contribution-guidelines"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+<a href="#license"><img alt="Static Badge" src="https://img.shields.io/badge/License-Custom%20License%20v1.2-blue">
 ## Project Description
 **Attack On Titan: Utopia** is a one-player, endless tower defense game inspired by the hit anime *Attack on Titan*. The game is set in the Utopia District of Wall Rose, where players must defend against waves of titans using a variety of Anti-Titan weapons. The objective is to prevent the titans from breaching the walls of Utopia for as long as possible.
 
