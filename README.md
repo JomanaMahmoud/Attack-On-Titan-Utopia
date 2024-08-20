@@ -168,7 +168,7 @@ All media used in this project, including images and videos, are credited to the
 
 ## License
 
-This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE.md) file for details.
 
 ### License Summary
 
@@ -179,11 +179,19 @@ This project is licensed under the **Attack On Titan: Utopia License - Version 1
 - **Disclaimer**: The project is provided "as is" without warranties.
 - **Termination**: License may be terminated for non-compliance.
 
-For full license terms, please refer to the [LICENSE](./LICENSE) file.
+For full license terms, please refer to the [LICENSE](./LICENSE.md) file.
 
 ## Contribution Guidelines
 
-Contributions to this project are welcome. Please submit contributions via Github Pull Requests. All contributions are subject to review and approval by the project owners and will be incorporated at the project owner's discretion.
+We’re excited that you’re interested in contributing to this project! Whether it's fixing bugs, adding features, or improving documentation, your contributions are welcome and appreciated.
+
+### How to Contribute
+
+- **Submit a Pull Request**: If you’ve made changes that you think will benefit the project, please submit a pull request on GitHub.
+- **Review Process**: All contributions will be reviewed by the project owners. We’ll provide feedback, and once everything looks good, your changes will be merged into the project.
+- **Discretion**: Contributions will be incorporated into the project at the discretion of the project owners, but don’t worry—your work is valued, and we’ll do our best to include it if it fits with the project’s goals.
+
+Thank you for helping make this project better!
 
 ## Commercial Use
 
