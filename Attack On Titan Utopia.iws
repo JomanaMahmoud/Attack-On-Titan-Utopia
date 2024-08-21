@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase.">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -159,7 +159,9 @@
       <workItem from="1724094052972" duration="6036000" />
       <workItem from="1724100239260" duration="90000" />
       <workItem from="1724104931271" duration="1270000" />
-      <workItem from="1724155736336" duration="4504000" />
+      <workItem from="1724155736336" duration="5190000" />
+      <workItem from="1724268828809" duration="168000" />
+      <workItem from="1724273735511" duration="5097000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -225,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724105946478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase.">
+      <option name="closed" value="true" />
+      <created>1724160622611</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1724160622611</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +278,7 @@
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan" />
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*" />
-    <option name="LAST_COMMIT_MESSAGE" value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*" />
+    <MESSAGE value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
+    <option name="LAST_COMMIT_MESSAGE" value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
   </component>
 </project>
