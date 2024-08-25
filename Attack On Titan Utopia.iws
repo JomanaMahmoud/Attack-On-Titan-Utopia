@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="progress bars added still need adjustment">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase.">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -12,9 +12,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Attack-On-Titan-Utopia\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -27,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="5-fixing-titans-movement" />
+        <entry key="$PROJECT_DIR$" value="4-fixing-settings-page" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,12 +35,19 @@
     &quot;assignee&quot;: &quot;yehiarasheed&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yehiarasheed/Attack-On-Titan-Utopia.git&quot;,
-    &quot;accountId&quot;: &quot;730ff3cc-451a-420e-8d55-39e654705bae&quot;
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yehiarasheed/Attack-On-Titan-Utopia.git",
+    "accountId": "d4bb5b6f-1cf7-44f7-a01d-e0400eff84a5"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -164,8 +168,7 @@
       <workItem from="1724104931271" duration="1270000" />
       <workItem from="1724155736336" duration="5190000" />
       <workItem from="1724268828809" duration="168000" />
-      <workItem from="1724273735511" duration="5669000" />
-      <workItem from="1724439279122" duration="5976000" />
+      <workItem from="1724273735511" duration="5097000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -239,15 +242,7 @@
       <option name="project" value="LOCAL" />
       <updated>1724160622611</updated>
     </task>
-    <task id="LOCAL-00010" summary="progress bars added still need adjustment">
-      <option name="closed" value="true" />
-      <created>1724279134622</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1724279134622</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +286,6 @@
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*" />
     <MESSAGE value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
-    <MESSAGE value="progress bars added still need adjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress bars added still need adjustment" />
+    <option name="LAST_COMMIT_MESSAGE" value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
   </component>
 </project>

@@ -96,6 +96,9 @@ public class View extends Application {
     private HashMap<Titan,ImageView> titans1 = new HashMap<Titan,ImageView>();
     private HashMap<Titan,ImageView> titans2 = new HashMap<Titan,ImageView>();
     private HashMap<Titan,ImageView> titans3 = new HashMap<Titan,ImageView>();
+    private HashMap<Titan,Label> titans1labels = new HashMap<Titan,Label>();
+    private HashMap<Titan,Label> titans2labels = new HashMap<Titan,Label>();
+    private HashMap<Titan,Label> titans3labels = new HashMap<Titan,Label>();
 	private HashMap<Titan,ProgressBar> titans1ProgressBars = new HashMap<Titan,ProgressBar>();
 	private HashMap<Titan,ProgressBar> titans2ProgressBars = new HashMap<Titan,ProgressBar>();
 	private HashMap<Titan,ProgressBar> titans3ProgressBars = new HashMap<Titan,ProgressBar>();
@@ -586,19 +589,19 @@ public class View extends Application {
 		lane3titans.setMaxWidth(200);
 		lane3titans.setMaxHeight(1400);
 		
-		wallHealth1.setPrefWidth(50);
+		wallHealth1.setPrefWidth(75);
 		wallHealth1.setPrefHeight(15);
 		wallHealth1.setRotate(-90);
 		wallHealth1.setTranslateX(-455);
 		wallHealth1.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth2.setPrefWidth(50);
+		wallHealth2.setPrefWidth(75);
 		wallHealth2.setPrefHeight(15);
 		wallHealth2.setRotate(-90);
 		wallHealth2.setTranslateX(-455);
 		wallHealth2.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth3.setPrefWidth(50);
+		wallHealth3.setPrefWidth(75);
 		wallHealth3.setPrefHeight(15);
 		wallHealth3.setRotate(-90);
 		wallHealth3.setTranslateX(-455);
@@ -1101,31 +1104,31 @@ public class View extends Application {
 		lane5weaponFlow.setMaxHeight(100);
 		
 		//progressbars
-		wallHealth1H.setPrefWidth(50);
+		wallHealth1H.setPrefWidth(75);
 		wallHealth1H.setPrefHeight(15);
 		wallHealth1H.setRotate(-90);
 		wallHealth1H.setTranslateX(-455);
 		wallHealth1H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth2H.setPrefWidth(50);
+		wallHealth2H.setPrefWidth(75);
 		wallHealth2H.setPrefHeight(15);
 		wallHealth2H.setRotate(-90);
 		wallHealth2H.setTranslateX(-455);
 		wallHealth2H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth3H.setPrefWidth(50);
+		wallHealth3H.setPrefWidth(75);
 		wallHealth3H.setPrefHeight(15);
 		wallHealth3H.setRotate(-90);
 		wallHealth3H.setTranslateX(-455);
 		wallHealth3H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth4H.setPrefWidth(50);
+		wallHealth4H.setPrefWidth(75);
 		wallHealth4H.setPrefHeight(15);
 		wallHealth4H.setRotate(-90);
 		wallHealth4H.setTranslateX(-455);
 		wallHealth4H.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 		
-		wallHealth5H.setPrefWidth(50);
+		wallHealth5H.setPrefWidth(75);
 		wallHealth5H.setPrefHeight(15);
 		wallHealth5H.setRotate(-90);
 		wallHealth5H.setTranslateX(-455);
@@ -1677,7 +1680,6 @@ public class View extends Application {
 		Iterator<Titan> lane1Titans =  battle.getOriginalLanes().get(0).getTitans().iterator();
 		Iterator<Titan> lane2Titans =  battle.getOriginalLanes().get(1).getTitans().iterator();
 		Iterator<Titan> lane3Titans =  battle.getOriginalLanes().get(2).getTitans().iterator();
-		ArrayList<Titan> toremove = new ArrayList<Titan>();
 		int random = 0;
 		Random rand = new Random();
 		random = rand.nextInt(-30,25);
@@ -1688,24 +1690,20 @@ public class View extends Application {
 
 				if (entry.getKey().isDefeated()) {
 					lane1weapon.getChildren().removeAll(entry.getValue(), titans1ProgressBars.get(entry.getKey()));
-					toremove.add(entry.getKey());
+					titans1.remove(entry.getKey());
+					titans1ProgressBars.remove(entry.getKey());
 				} else {
 					if (!entry.getKey().hasReachedTarget()) {
 						if(entry.getKey() instanceof ColossalTitan) {
-							movei(entry.getValue(), titans1ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.43);
+							movei(entry.getValue(), titans1ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.48);
 						}
 						else
 						{
-							movei(entry.getValue(), titans1ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.58);
+							movei(entry.getValue(), titans1ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.6);
 						}
 					}
 					titans1ProgressBars.get(entry.getKey()).setProgress((double) entry.getKey().getCurrentHealth() /entry.getKey().getBaseHealth());
 				}
-			}
-			for(Titan titan: toremove)
-			{
-				titans1.remove(titan);
-				titans1ProgressBars.remove(titan);
 			}
 			while (lane1Titans.hasNext()) {
 				Titan titan = lane1Titans.next();
@@ -1714,37 +1712,35 @@ public class View extends Application {
 					ImageView addedTitan = null;
 					if (titan instanceof PureTitan) {
 						addedTitan = new ImageView(pureTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof AbnormalTitan){
 						addedTitan = new ImageView(abnormalTitan);
-						translate = 28;
+						translate = 25;
 					}
 					if (titan instanceof ArmoredTitan) {
 						addedTitan = new ImageView(armoredTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof ColossalTitan) {
 						addedTitan = new ImageView(colossalTitan);
-						translate = 70;
+						translate = 100;
 					}
 
 					ProgressBar health1 = new ProgressBar();
 					health1.setProgress((double) titan.getCurrentHealth()/titan.getBaseHealth());
-					health1.setPrefWidth(43);
-					health1.setPrefHeight(13);
+					health1.setPrefWidth(40);
+					health1.setPrefHeight(12);
 					health1.setStyle("-fx-accent: #4f7696; -fx-border-width: 0.5px; ");
 					health1.setTranslateY(random - translate);
+					health1.setTranslateX(685);
 					lane1weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
 					addedTitan.setTranslateY(random);
 					if (titan instanceof ColossalTitan) {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
-						health1.setTranslateX(648);
-						addedTitan.setTranslateX(650);
 					} else {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
-						health1.setTranslateX(675);
-						addedTitan.setTranslateX(675);
 					}
 					addedTitan.setPreserveRatio(true);
 					titans1.put(titan, addedTitan);
@@ -1758,24 +1754,20 @@ public class View extends Application {
 
 				if (entry.getKey().isDefeated()) {
 					lane2weapon.getChildren().removeAll(entry.getValue(), titans2ProgressBars.get(entry.getKey()));
-					toremove.add(entry.getKey());
+					titans2.remove(entry.getKey());
+					titans2ProgressBars.remove(entry.getKey());
 				} else {
 					if (!entry.getKey().hasReachedTarget()) {
 						if (entry.getKey() instanceof ColossalTitan) {
-							movei(entry.getValue(), titans2ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.43);
+							movei(entry.getValue(), titans2ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.48);
 						}
 						else
 						{
-							movei(entry.getValue(), titans2ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.58);
+							movei(entry.getValue(), titans2ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.6);
 						}
 					}
 					titans2ProgressBars.get(entry.getKey()).setProgress((double) entry.getKey().getCurrentHealth()/entry.getKey().getBaseHealth());
 				}
-			}
-			for(Titan titan: toremove)
-			{
-				titans2.remove(titan);
-				titans2ProgressBars.remove(titan);
 			}
 			while (lane2Titans.hasNext()) {
 
@@ -1785,36 +1777,35 @@ public class View extends Application {
 					ImageView addedTitan = null;
 					if (titan instanceof PureTitan) {
 						addedTitan = new ImageView(pureTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof AbnormalTitan){
 						addedTitan = new ImageView(abnormalTitan);
-						translate = 28;
+						translate = 25;
 					}
 					if (titan instanceof ArmoredTitan) {
 						addedTitan = new ImageView(armoredTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof ColossalTitan) {
 						addedTitan = new ImageView(colossalTitan);
-						translate = 70;
+						translate = 100;
 					}
 					ProgressBar health1 = new ProgressBar();
-					health1.setProgress((double) titan.getCurrentHealth()/titan.getBaseHealth());
-					health1.setPrefWidth(43);
-					health1.setPrefHeight(13);
-					health1.setStyle("-fx-accent: #4f7696; -fx-border-width: 0.5px; ");
+					health1.setProgress((double)titan.getCurrentHealth()/titan.getBaseHealth());
+					health1.setPrefWidth(40);
+					health1.setPrefHeight(12);
+					health1.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 					health1.setTranslateY(random - translate);
+					health1.setTranslateX(685);
 					lane2weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
 					addedTitan.setTranslateY(random);
 					if (titan instanceof ColossalTitan) {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
-						health1.setTranslateX(648);
-						addedTitan.setTranslateX(650);
+						health1.setTranslateY(random - 50);
 					} else {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
-						health1.setTranslateX(675);
-						addedTitan.setTranslateX(675);
 					}
 					addedTitan.setPreserveRatio(true);
 					titans2.put(titan, addedTitan);
@@ -1827,23 +1818,19 @@ public class View extends Application {
 
 				if (entry.getKey().isDefeated()) {
 					lane3weapon.getChildren().removeAll(entry.getValue(), titans3ProgressBars.get(entry.getKey()));
-					toremove.add(entry.getKey());
+					titans3.remove(entry.getKey());
+					titans3labels.remove(entry.getKey());
 				} else {
 					if (!entry.getKey().hasReachedTarget()) {
 						if(entry.getKey() instanceof ColossalTitan) {
-							movei(entry.getValue(), titans3ProgressBars.get(entry.getKey()), entry.getKey().getSpeed()*1.43);
+							movei(entry.getValue(), titans3ProgressBars.get(entry.getKey()), entry.getKey().getSpeed()*1.48);
 						}
 						else {
-							movei(entry.getValue(), titans3ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.58);
+							movei(entry.getValue(), titans3ProgressBars.get(entry.getKey()), entry.getKey().getSpeed() * 1.6);
 						}
 					}
 					titans3ProgressBars.get(entry.getKey()).setProgress((double)entry.getKey().getCurrentHealth()/entry.getKey().getBaseHealth());
 				}
-			}
-			for(Titan titan: toremove)
-			{
-				titans3.remove(titan);
-				titans3ProgressBars.remove(titan);
 			}
 			while (lane3Titans.hasNext()) {
 				Titan titan = lane3Titans.next();
@@ -1852,37 +1839,36 @@ public class View extends Application {
 					ImageView addedTitan = null;
 					if (titan instanceof PureTitan) {
 						addedTitan = new ImageView(pureTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof AbnormalTitan){
 						addedTitan = new ImageView(abnormalTitan);
-						translate = 28;
+						translate = 25;
 					}
 					if (titan instanceof ArmoredTitan) {
 						addedTitan = new ImageView(armoredTitan);
-						translate = 38;
+						translate = 35;
 					}
 					if (titan instanceof ColossalTitan) {
 						addedTitan = new ImageView(colossalTitan);
-						translate = 70;
+						translate = 100;
 					}
 
 					ProgressBar health1 = new ProgressBar();
-					health1.setProgress((double) titan.getCurrentHealth()/titan.getBaseHealth());
-					health1.setPrefWidth(43);
-					health1.setPrefHeight(13);
-					health1.setStyle("-fx-accent: #4f7696; -fx-border-width: 0.5px; ");
+					health1.setProgress((double)titan.getCurrentHealth()/titan.getBaseHealth());
+					health1.setPrefWidth(40);
+					health1.setPrefHeight(12);
+					health1.setStyle("-fx-accent: #4f7696; -fx-border-width:0.5px");
 					health1.setTranslateY(random - translate);
+					health1.setTranslateX(685);
 					lane3weapon.getChildren().addAll(addedTitan, health1);
+					addedTitan.setTranslateX(685);
 					addedTitan.setTranslateY(random);
 					if (titan instanceof ColossalTitan) {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 2);
-						health1.setTranslateX(648);
-						addedTitan.setTranslateX(650);
+						health1.setTranslateY(random - 50);
 					} else {
 						addedTitan.setFitHeight(titan.getHeightInMeters() * 4);
-						health1.setTranslateX(675);
-						addedTitan.setTranslateX(675);
 					}
 					addedTitan.setPreserveRatio(true);
 					titans3.put(titan, addedTitan);
@@ -1891,8 +1877,8 @@ public class View extends Application {
 			}
 		}
 	}
-// width from above till first lane is 58 pixels, first lane height is 149, same for all lanes too so we need to spawn between 58 and 207
-/*	public void spawnTitans()
+// width from above till first lane is 58 pixels, first lane height is 149, same for all lanes too, so we need to spawn between 58 and 207
+	public void spawnTitans()
 	{
 		Image pureTitan = new Image("PureTitan.png");
 		Image abnormalTitan = new Image("AbnormalTitan.png");
@@ -2135,7 +2121,7 @@ public class View extends Application {
 	            }
 			}
 		}
-	}*/
+	}
 
 	public void spawnTitansH()
 	{
@@ -2643,7 +2629,7 @@ public class View extends Application {
 		}	
 	}
 
-	/*public void moveTitansEasy() {
+	public void moveTitansEasy() {
 		// Process titans1
 		List<Titan> defeatedTitans1 = new ArrayList<>();
 		for (Map.Entry<Titan, ImageView> entry : titans1.entrySet()) {
@@ -2691,7 +2677,7 @@ public class View extends Application {
 			titans3.remove(titan);
 			titans3labels.remove(titan);
 		}
-	}*/
+	}
 	
 	public void moveTitansHard()
 	{
@@ -2753,24 +2739,7 @@ public class View extends Application {
         closeButton.setOnAction(event -> {
             alertStage.close();
             primaryStage.close();
-			View game = new View();
-            primaryStage.setScene(s1);/*
-			Image lane = new Image("lane with wall.jpeg");
-			ImageView lane1 = new ImageView(lane);
-			ImageView lane2 = new ImageView(lane);
-			ImageView lane3 = new ImageView(lane);
-			titans1 = new HashMap<Titan,ImageView>();
-			titans2 = new HashMap<Titan,ImageView>();
-			titans3 = new HashMap<Titan,ImageView>();
-			titans1ProgressBars = new HashMap<Titan,ProgressBar>();
-			titans2ProgressBars = new HashMap<Titan,ProgressBar>();
-			titans3ProgressBars = new HashMap<Titan,ProgressBar>();
-			lane1weapon.getChildren().clear();
-			lane2weapon.getChildren().clear();
-			lane1weapon.getChildren().addAll(lane1,lane1weaponHB,wallHealth1,lane1titans);
-			lane2weapon = new StackPane(lane2,lane2weaponHB,wallHealth2,lane2titans);
-			lane3weapon = new StackPane(lane3,lane3weaponHB,wallHealth3,lane3titans);
-*/
+            primaryStage.setScene(s1);
             primaryStage.show();
 
         });
