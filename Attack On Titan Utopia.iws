@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="progress bars added still need adjustment">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -165,10 +165,7 @@
       <workItem from="1724155736336" duration="5190000" />
       <workItem from="1724268828809" duration="168000" />
       <workItem from="1724273735511" duration="5669000" />
-      <workItem from="1724439279122" duration="6357000" />
-      <workItem from="1724794731546" duration="1023000" />
-      <workItem from="1724971801237" duration="655000" />
-      <workItem from="1725062396976" duration="2422000" />
+      <workItem from="1724439279122" duration="5976000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -250,15 +247,7 @@
       <option name="project" value="LOCAL" />
       <updated>1724279134622</updated>
     </task>
-    <task id="LOCAL-00011" summary="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes">
-      <option name="closed" value="true" />
-      <created>1724447038344</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1724447038344</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,7 +292,6 @@
     <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*" />
     <MESSAGE value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
     <MESSAGE value="progress bars added still need adjustment" />
-    <MESSAGE value="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes" />
-    <option name="LAST_COMMIT_MESSAGE" value="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes" />
+    <option name="LAST_COMMIT_MESSAGE" value="progress bars added still need adjustment" />
   </component>
 </project>
