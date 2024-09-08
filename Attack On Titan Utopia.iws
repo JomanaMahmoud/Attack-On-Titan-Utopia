@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted The Position of the Attack On Titan Logo so that it is not very close to the game buttons, reaching more comfortable visibility.">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted the progress bars of the lanes and hard is finished, speed of titans is faster, I commented the old methods and will remove them later.">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -12,6 +12,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Attack-On-Titan-Utopia\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -24,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="4-fixing-settings-page" />
+        <entry key="$PROJECT_DIR$" value="5-fixing-titans-movement" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,38 +56,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.View.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Legacy Library": "Legacy library depends on IDE installation",
-    "Notification.DoNotAsk-Legacy Library": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "6-adjusting-logo-in-start-page",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Yehia/Documents/CS3/IntelliJ/Attack On Titan Utopia",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.View (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.View.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Legacy Library&quot;: &quot;Legacy library depends on IDE installation&quot;,
+    &quot;Notification.DoNotAsk-Legacy Library&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;5-fixing-titans-movement&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joman/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="View" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Application.View">
+    <configuration name="View (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
       <module name="M2 Solution" />
+      <option name="PROGRAM_PARAMETERS" value="--module-path &quot;C:\Users\joman\Downloads\sdk intellj\javafx-sdk-22.0.2\lib&quot; --add-modules javafx.controls,javafx.media" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="game.gui.*" />
@@ -95,6 +100,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.View (1)" />
+      <item itemvalue="Application.View" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -126,23 +135,16 @@
       <workItem from="1722094875334" duration="8386000" />
       <workItem from="1722107871436" duration="13045000" />
       <workItem from="1722121823311" duration="903000" />
-      <workItem from="1722151699423" duration="574000" />
-      <workItem from="1722152306555" duration="2500000" />
-      <workItem from="1722156320374" duration="149000" />
-      <workItem from="1722159492606" duration="3245000" />
-      <workItem from="1722166419553" duration="946000" />
-      <workItem from="1722179444858" duration="346000" />
-      <workItem from="1722249451239" duration="3831000" />
-      <workItem from="1722268654478" duration="2694000" />
-      <workItem from="1722333084550" duration="2550000" />
+      <workItem from="1722122783326" duration="465000" />
+      <workItem from="1722135284721" duration="126000" />
+      <workItem from="1722155287303" duration="585000" />
+      <workItem from="1722156001584" duration="436000" />
     </task>
-    <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
-      <option name="closed" value="true" />
-      <created>1722112520085</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1722112520085</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;">
-      <
+  </component>
+  <component name="TaskProjectConfiguration">
+    <option name="searchClosed" value="true" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="48" y="104" width="1848" height="1056" extended-state="6" />
+  </component>
+</project>

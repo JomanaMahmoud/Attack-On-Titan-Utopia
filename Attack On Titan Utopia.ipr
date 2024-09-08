@@ -18,16 +18,16 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="javaFX-22">
+    <library name="javafx">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx-swt.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.base.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.controls.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.fxml.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.graphics.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.media.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.swing.jar!/" />
-        <root url="jar://$PROJECT_DIR$/javafx-sdk-22.0.1/lib/javafx.web.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.web.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx-swt.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.base.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.controls.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.fxml.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.graphics.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.media.jar!/" />
+        <root url="jar://$USER_HOME$/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

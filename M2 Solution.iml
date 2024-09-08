@@ -19,5 +19,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="javaFX-22" level="application" />
     <orderEntry type="library" name="javafx-swt" level="project" />
+    <orderEntry type="library" name="javafx.web" level="project" />
+    <orderEntry type="library" name="javafx" level="application" />
   </component>
 </module>
