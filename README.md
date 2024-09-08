@@ -1,5 +1,6 @@
 # Attack On Titan: Utopia
-
+<a href="#contribution-guidelines"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
+<a href="#license"><img alt="Static Badge" src="https://img.shields.io/badge/License-Custom%20License%20v1.2-blue">
 ## Project Description
 **Attack On Titan: Utopia** is a one-player, endless tower defense game inspired by the hit anime *Attack on Titan*. The game is set in the Utopia District of Wall Rose, where players must defend against waves of titans using a variety of Anti-Titan weapons. The objective is to prevent the titans from breaching the walls of Utopia for as long as possible.
 
@@ -18,15 +19,21 @@
   - [Game Rules](#game-rules)
   - [Turn Actions](#turn-actions)
 - [Credits](#credits)
-
+- [License](#license)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Commercial Use](#commercial-use)
 ## Preview
 
 ### Screenshots
 
-![Start Page](https://github.com/user-attachments/assets/d97bb126-2a33-44f7-a787-1f6ada9bbe43)
+![Start Page](https://github.com/user-attachments/assets/7a3a9122-ab7b-4b66-b678-c23add98bf9c)
 ![Video Scene](https://github.com/user-attachments/assets/9b627df8-85e3-4f4f-ab55-ac9940024452)
-![Easy Mode](https://github.com/user-attachments/assets/90a7274b-3e78-4542-9c7e-4a8f6a199175)
-![Hard Mode](https://github.com/user-attachments/assets/590f7b41-acbd-458b-9130-a03727361bcd)
+![Game Settings](https://github.com/user-attachments/assets/d6b3176f-9bc9-4664-961f-01ff81a9895e)
+![Game Instructions](https://github.com/user-attachments/assets/43001df5-359c-4863-8112-17597fbf32a3)
+![Easy Mode](https://github.com/user-attachments/assets/5d54bd46-d2f5-49c9-bd06-83034ccd1359)
+![Hard Mode](https://github.com/user-attachments/assets/2342147e-1175-4327-ba00-98d6db66c740)
+
+
 
 ### Gameplay Video
 
@@ -152,6 +159,42 @@ Each turn, players can choose to deploy weapons or pass. Turn sequence involves 
 ## Credits
 - **Developers**: Jomana Mahmoud, Nada Yasser & Yehia Rasheed.
 - **Inspired by**: *Attack on Titan* anime series
-- **Media Credits**: All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes.
+
+All media used in this project, including images and videos, are credited to their respective creators and used under fair use for educational and demonstration purposes. If you plan to use this project for commercial purposes, you must ensure you have obtained the necessary licenses or permissions for any copyrighted media.
+
+## License
+
+This project is licensed under the **Attack On Titan: Utopia License - Version 1.2**. See the [LICENSE](./LICENSE.md) file for details.
+
+### License Summary
+
+- **License Grant**: You are granted a non-exclusive, worldwide, royalty-free, perpetual license to use, modify, distribute, and contribute to the project.
+- **Contributions**: Contributions must be submitted via GitHub pull requests and are subject to review and approval.
+- **Commercial Use**: Requires separate agreement with the project owners. Notification and licensing for commercial use are required.
+- **Attribution**: Proper credit must be given to the project and its media sources.
+- **Disclaimer**: The project is provided "as is" without warranties.
+- **Termination**: License may be terminated for non-compliance.
+
+For full license terms, please refer to the [LICENSE](./LICENSE.md) file.
+
+## Contribution Guidelines
+
+We’re excited that you’re interested in contributing to this project! Whether it's fixing bugs, adding features, or improving documentation, your contributions are welcome and appreciated.
+
+For more detailed information on how to contribute, please check out our [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+
+### How to Contribute
+
+- **Submit a Pull Request**: If you’ve made changes that you think will benefit the project, please submit a pull request on GitHub.
+- **Review Process**: All contributions will be reviewed by the project owners. We’ll provide feedback, and once everything looks good, your changes will be merged into the project.
+- **Discretion**: Contributions will be incorporated into the project at the discretion of the project owners, but don’t worry—your work is valued, and we’ll do our best to include it if it fits with the project’s goals.
+
+Thank you for helping make this project better!
+## Commercial Use
+
+If you intend to use this project for commercial purposes, please follow these steps:
+
+1. **Contact**: Reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com) to request permission for commercial use. Notification and licensing from original copyright holders for commercial use are required.
+2. **Agreement**: A separate agreement must be made with the project owners regarding commercial use. This may include terms for revenue sharing or other considerations.
 
 ---

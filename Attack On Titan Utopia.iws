@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later.">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="Adjusted the progress bars of the lanes and hard is finished, speed of titans is faster, I commented the old methods and will remove them later.">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -100,20 +100,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="View" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="game.gui.View" />
-      <module name="M2 Solution" />
-      <option name="PROGRAM_PARAMETERS" value="--module-path &quot;C:\Users\joman\Downloads\sdk intellj\javafx-sdk-22.0.2\lib&quot; --add-modules javafx.controls,javafx.media" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="game.gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.View (1)" />
       <item itemvalue="Application.View" />
@@ -149,172 +135,16 @@
       <workItem from="1722094875334" duration="8386000" />
       <workItem from="1722107871436" duration="13045000" />
       <workItem from="1722121823311" duration="903000" />
-      <workItem from="1722151699423" duration="574000" />
-      <workItem from="1722152306555" duration="2500000" />
-      <workItem from="1722156320374" duration="149000" />
-      <workItem from="1722159492606" duration="3245000" />
-      <workItem from="1722166419553" duration="946000" />
-      <workItem from="1722179444858" duration="346000" />
-      <workItem from="1722249451239" duration="3831000" />
-      <workItem from="1722268654478" duration="2694000" />
-      <workItem from="1722333084550" duration="2550000" />
-      <workItem from="1723832963549" duration="3397000" />
-      <workItem from="1724094052972" duration="6036000" />
-      <workItem from="1724100239260" duration="90000" />
-      <workItem from="1724104931271" duration="1270000" />
-      <workItem from="1724155736336" duration="5190000" />
-      <workItem from="1724268828809" duration="168000" />
-      <workItem from="1724273735511" duration="5669000" />
-      <workItem from="1724439279122" duration="6357000" />
-      <workItem from="1724794731546" duration="1023000" />
-      <workItem from="1724971801237" duration="655000" />
-      <workItem from="1725062396976" duration="2422000" />
-      <workItem from="1725120009746" duration="1270000" />
-      <workItem from="1725816876304" duration="1588000" />
+      <workItem from="1722122783326" duration="465000" />
+      <workItem from="1722135284721" duration="126000" />
+      <workItem from="1722155287303" duration="585000" />
+      <workItem from="1722156001584" duration="436000" />
     </task>
-    <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
-      <option name="closed" value="true" />
-      <created>1722112520085</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1722112520085</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;">
-      <option name="closed" value="true" />
-      <created>1722153518979</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1722153518979</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it">
-      <option name="closed" value="true" />
-      <created>1722272023659</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1722272023659</updated>
-    </task>
-    <task id="LOCAL-00004" summary="changed titans to hashmaps but health not updating probably">
-      <option name="closed" value="true" />
-      <created>1723671837396</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1723671837396</updated>
-    </task>
-    <task id="LOCAL-00005" summary="used iterator in method spawntitansi">
-      <option name="closed" value="true" />
-      <created>1723836810703</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1723836810703</updated>
-    </task>
-    <task id="LOCAL-00006" summary="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan">
-      <option name="closed" value="true" />
-      <created>1724105179837</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1724105179837</updated>
-    </task>
-    <task id="LOCAL-00007" summary="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan">
-      <option name="closed" value="true" />
-      <created>1724105316970</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1724105316970</updated>
-    </task>
-    <task id="LOCAL-00008" summary="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*">
-      <option name="closed" value="true" />
-      <created>1724105946478</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1724105946478</updated>
-    </task>
-    <task id="LOCAL-00009" summary="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase.">
-      <option name="closed" value="true" />
-      <created>1724160622611</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1724160622611</updated>
-    </task>
-    <task id="LOCAL-00010" summary="progress bars added still need adjustment">
-      <option name="closed" value="true" />
-      <created>1724279134622</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1724279134622</updated>
-    </task>
-    <task id="LOCAL-00011" summary="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes">
-      <option name="closed" value="true" />
-      <created>1724447038344</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1724447038344</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later.">
-      <option name="closed" value="true" />
-      <created>1725121242989</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1725121242989</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
-    <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+  <component name="TaskProjectConfiguration">
+    <option name="searchClosed" value="true" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="original-files/main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added" />
-    <MESSAGE value="Added The New Button Style Without CSS, Changed &quot;Play&quot; Button To &quot;Start Game&quot;" />
-    <MESSAGE value="Fixed most of the instructions page issue; replaced the bland instructions picture with a scrollable text area which supports the in-game cursor and in-game font with a title above it" />
-    <MESSAGE value="changed titans to hashmaps but health not updating probably" />
-    <MESSAGE value="used iterator in method spawntitansi" />
-    <MESSAGE value="method spawntitansi now updates the titans health and moves them accoordinly and has set different heights and fixed the different speed for each titan" />
-    <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan" />
-    <MESSAGE value="method spawntitansi now updates the titans health and moves them accordingly and has set different heights and fixed the different speed for each titan/*" />
-    <MESSAGE value="The Titans now stop at the walls, and they no longer move when the lane is lost. I also adjusted the speed of each Titan to make it clear which one precedes the others. Additionally, I fixed the movement when starting with a purchase." />
-    <MESSAGE value="progress bars added still need adjustment" />
-    <MESSAGE value="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes" />
-    <MESSAGE value="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later." />
+  <component name="ToolWindowManager">
+    <frame x="48" y="104" width="1848" height="1056" extended-state="6" />
   </component>
 </project>
