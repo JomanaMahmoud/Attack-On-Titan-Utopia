@@ -49,6 +49,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 public class View extends Application {
@@ -2517,10 +2518,43 @@ public class View extends Application {
 		Stage alertStage = new Stage();
 		alertStage.setTitle(title);
 		alertStage.getIcons().add(new Image("icon.jpeg"));
+		alertStage.setOnCloseRequest(event -> {
+			// Consume the event so the window doesn't close
+			event.consume();
+
+		});
+		alertStage.setResizable(false);
+		alertStage.initStyle(StageStyle.UNDECORATED);
+
+		// Disable minimize by overriding the iconified (minimize) property
+		alertStage.iconifiedProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue) {
+				// If the user tries to minimize, prevent it by reverting iconification
+				alertStage.setIconified(false);
+
+			}
+		});
+
 		Label label = new Label(message);
 		label.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
 		Button closeButton = new Button("Play Again");
+		Background originalBackground = new Background(new BackgroundFill(Color.web("#d1ede9"),new CornerRadii(10), Insets.EMPTY));
+		DropShadow dropShadow = new DropShadow();
+		dropShadow.setColor(Color.web("#cac9ca"));
+		dropShadow.setRadius(10);
+		dropShadow.setOffsetX(-3);
+		dropShadow.setOffsetY(3);
+		closeButton.setPrefHeight(22);
+		closeButton.setPrefWidth(190);
+		closeButton.setBackground(originalBackground);
+		closeButton.setPadding(new Insets(10));
+		closeButton.setOnMouseEntered(e -> closeButton.setEffect(dropShadow));
+		closeButton.setOnMouseExited(e -> closeButton.setEffect(null));
+		Media defaultButtonSound = new Media(new File("src/defaultButtonSound.mp3").toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(defaultButtonSound);
 		closeButton.setOnAction(event -> {
+			mediaPlayer.seek(Duration.ZERO);
+			mediaPlayer.play();
 			alertStage.close();
 			primaryStage.close();
 			primaryStage.setScene(s1);
@@ -2550,14 +2584,32 @@ public class View extends Application {
             primaryStage.show();
 
 		});
+		closeButton.setOnAction(event -> {
+			mediaPlayer.seek(Duration.ZERO);
+			mediaPlayer.play();
+			alertStage.close();
+			primaryStage.close();
+
+		});
+		Button exitgame = new Button("Exit");
+		exitgame.setPrefHeight(22);
+		exitgame.setPrefWidth(190);
+		exitgame.setBackground(originalBackground);
+		exitgame.setPadding(new Insets(10));
+		exitgame.setOnMouseEntered(e -> closeButton.setEffect(dropShadow));
+		exitgame.setOnMouseExited(e -> closeButton.setEffect(null));
+
 
 		VBox pane = new VBox(15);
+		HBox buttons = new HBox(20);
+		buttons.setAlignment(Pos.CENTER);
 		pane.setAlignment(Pos.CENTER);
-		pane.getChildren().addAll(label,closeButton);
+		pane.getChildren().addAll(label,buttons);
+		buttons.getChildren().addAll(closeButton,exitgame);
 		label.setAlignment(Pos.CENTER);
 		closeButton.setAlignment(Pos.CENTER);
 		closeButton.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
-
+		exitgame.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
 		Scene scene = new Scene(pane, 650, 100);
 		alertStage.setScene(scene);
 		alertStage.show();
