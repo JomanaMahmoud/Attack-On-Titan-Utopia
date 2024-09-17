@@ -30,8 +30,9 @@
 ![Video Scene](https://github.com/user-attachments/assets/9b627df8-85e3-4f4f-ab55-ac9940024452)
 ![Game Settings](https://github.com/user-attachments/assets/d6b3176f-9bc9-4664-961f-01ff81a9895e)
 ![Game Instructions](https://github.com/user-attachments/assets/43001df5-359c-4863-8112-17597fbf32a3)
-![Easy Mode](https://github.com/user-attachments/assets/5d54bd46-d2f5-49c9-bd06-83034ccd1359)
-![Hard Mode](https://github.com/user-attachments/assets/2342147e-1175-4327-ba00-98d6db66c740)
+![Easy Mode](https://github.com/user-attachments/assets/63272d68-b493-4767-a0af-beeb6ea84f7f)
+![Hard Mode](https://github.com/user-attachments/assets/723c7073-71f4-4124-a49d-32295f4c749b)
+
 
 
 
