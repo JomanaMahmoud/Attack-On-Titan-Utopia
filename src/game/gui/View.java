@@ -45,6 +45,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Shape;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
@@ -2500,36 +2501,82 @@ public class View extends Application {
 		Label label = new Label(message);
 		label.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
 		Button closeButton = new Button("Back");
-		closeButton.setOnAction(event -> alertStage.close());
+		Background originalBackground = new Background(new BackgroundFill(Color.web("#d1ede9"),new CornerRadii(10), Insets.EMPTY));
+		DropShadow dropShadow = new DropShadow();
+		dropShadow.setColor(Color.web("#cac9ca"));
+		dropShadow.setRadius(10);
+		dropShadow.setOffsetX(-3);
+		dropShadow.setOffsetY(3);
+		closeButton.setPrefHeight(22);
+		closeButton.setPrefWidth(190);
+		closeButton.setBackground(originalBackground);
+		closeButton.setPadding(new Insets(10));
+		closeButton.setOnMouseEntered(e -> closeButton.setEffect(dropShadow));
+		closeButton.setOnMouseExited(e -> closeButton.setEffect(null));
+		Media defaultButtonSound = new Media(new File("src/defaultButtonSound.mp3").toURI().toString());
+		MediaPlayer mediaPlayer = new MediaPlayer(defaultButtonSound);
+		closeButton.setOnAction(event -> {
+			mediaPlayer.seek(Duration.ZERO);
+			mediaPlayer.play();
+			alertStage.close();
+		});
+		alertStage.setResizable(false);
+		alertStage.initStyle(StageStyle.UNDECORATED);
 
+		alertStage.iconifiedProperty().addListener((observable, oldValue, newValue) -> {
+			if (newValue) {
+
+				alertStage.setIconified(false);
+
+			}
+		});
 		VBox pane = new VBox(15);
 		pane.setAlignment(Pos.CENTER);
 		pane.getChildren().addAll(label,closeButton);
 		label.setAlignment(Pos.CENTER);
 		closeButton.setAlignment(Pos.CENTER);
 		closeButton.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
+		StackPane root = new StackPane();
+		root.getChildren().add(pane);
+		root.setBackground(new Background(new BackgroundFill(
+				Color.LIGHTBLUE,
+				new CornerRadii(20),
+				Insets.EMPTY
+		)));
 
-		Scene scene = new Scene(pane, 650, 100);
+
+		root.setBorder(new Border(new BorderStroke(
+				Color.DARKBLUE,
+				BorderStrokeStyle.SOLID,
+				new CornerRadii(20),
+				new BorderWidths(3)
+		)));
+
+		Scene scene = new Scene(root, 650, 100);
+		scene.setFill(Color.TRANSPARENT);
+		Image cursorImage = new Image(getClass().getResourceAsStream("/Cursor.png"));
+		Cursor = new ImageCursor(cursorImage, cursorImage.getWidth()/2, cursorImage.getHeight()/2);
+		scene.setCursor(Cursor);
+		alertStage.initStyle(StageStyle.TRANSPARENT);
 		alertStage.setScene(scene);
+		alertStage.setAlwaysOnTop(true);
+		alertStage.setX(445);
+		alertStage.setY(270);
 		alertStage.show();
 	}
 
 	private void displayAlertGameOver(String title, String message) {
+
 		Stage alertStage = new Stage();
 		alertStage.setTitle(title);
 		alertStage.getIcons().add(new Image("icon.jpeg"));
-		alertStage.setOnCloseRequest(event -> {
-			// Consume the event so the window doesn't close
-			event.consume();
-
-		});
 		alertStage.setResizable(false);
 		alertStage.initStyle(StageStyle.UNDECORATED);
 
-		// Disable minimize by overriding the iconified (minimize) property
+
 		alertStage.iconifiedProperty().addListener((observable, oldValue, newValue) -> {
 			if (newValue) {
-				// If the user tries to minimize, prevent it by reverting iconification
+
 				alertStage.setIconified(false);
 
 			}
@@ -2556,39 +2603,8 @@ public class View extends Application {
 			mediaPlayer.seek(Duration.ZERO);
 			mediaPlayer.play();
 			alertStage.close();
-			primaryStage.close();
 			primaryStage.setScene(s1);
-			lane1weaponHB = new FlowPane();
-			lane2weaponHB = new FlowPane();
-			lane3weaponHB = new FlowPane();
-			lane1titans = new FlowPane();
-			lane2titans = new FlowPane();
-			lane3titans = new FlowPane();
-			lane = new Image("lane with wall.jpeg");
-			lane1 = new ImageView(lane);
-			lane2 = new ImageView(lane);
-			lane3 = new ImageView(lane);
-			wallHealth1 = new ProgressBar();
-			wallHealth2 = new ProgressBar();
-			wallHealth3 = new ProgressBar();
-			lane1weapon = new StackPane(lane1,lane1weaponHB,wallHealth1,lane1titans);
-			lane2weapon = new StackPane(lane2,lane2weaponHB,wallHealth2,lane2titans);
-			lane3weapon = new StackPane(lane3,lane3weaponHB,wallHealth3,lane3titans);
-			colorAdjust = new ColorAdjust();
-			titans1 = new HashMap<Titan,ImageView>();
-			 titans2 = new HashMap<Titan,ImageView>();
-			  titans3 = new HashMap<Titan,ImageView>();
-			 titans1ProgressBars = new HashMap<Titan,ProgressBar>();
-			 titans2ProgressBars = new HashMap<Titan,ProgressBar>();
-			 titans3ProgressBars = new HashMap<Titan,ProgressBar>();
             primaryStage.show();
-
-		});
-		closeButton.setOnAction(event -> {
-			mediaPlayer.seek(Duration.ZERO);
-			mediaPlayer.play();
-			alertStage.close();
-			primaryStage.close();
 
 		});
 		Button exitgame = new Button("Exit");
@@ -2596,10 +2612,18 @@ public class View extends Application {
 		exitgame.setPrefWidth(190);
 		exitgame.setBackground(originalBackground);
 		exitgame.setPadding(new Insets(10));
-		exitgame.setOnMouseEntered(e -> closeButton.setEffect(dropShadow));
-		exitgame.setOnMouseExited(e -> closeButton.setEffect(null));
+		exitgame.setOnMouseEntered(e -> exitgame.setEffect(dropShadow));
+		exitgame.setOnMouseExited(e -> exitgame.setEffect(null));
+		exitgame.setOnAction(event -> {
+			mediaPlayer.seek(Duration.ZERO);
+			mediaPlayer.play();
+			primaryStage.close();
+			alertStage.close();
+		});
 
-
+		alertStage.setAlwaysOnTop(true);
+		alertStage.setX(445);
+		alertStage.setY(270);
 		VBox pane = new VBox(15);
 		HBox buttons = new HBox(20);
 		buttons.setAlignment(Pos.CENTER);
@@ -2610,7 +2634,30 @@ public class View extends Application {
 		closeButton.setAlignment(Pos.CENTER);
 		closeButton.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
 		exitgame.setStyle("-fx-font-family: 'Space Games'; -fx-font-size: 14; ");
-		Scene scene = new Scene(pane, 650, 100);
+
+		StackPane root = new StackPane();
+		root.getChildren().add(pane);
+
+		root.setBackground(new Background(new BackgroundFill(
+				Color.LIGHTBLUE,
+				new CornerRadii(20),
+				Insets.EMPTY
+		)));
+
+
+		root.setBorder(new Border(new BorderStroke(
+				Color.DARKBLUE,
+				BorderStrokeStyle.SOLID,
+				new CornerRadii(20),
+				new BorderWidths(3)
+		)));
+
+		Scene scene = new Scene(root, 650, 100);
+		scene.setFill(Color.TRANSPARENT);
+		Image cursorImage = new Image(getClass().getResourceAsStream("/Cursor.png"));
+		Cursor = new ImageCursor(cursorImage, cursorImage.getWidth()/2, cursorImage.getHeight()/2);
+		scene.setCursor(Cursor);
+		alertStage.initStyle(StageStyle.TRANSPARENT);
 		alertStage.setScene(scene);
 		alertStage.show();
 	}

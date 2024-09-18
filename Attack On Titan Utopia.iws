@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="removed unused methods">
+    <list default="true" id="1945ec13-6c83-4a81-bf19-b33c7d94973c" name="Changes" comment="closed the title bar of the alert stage and added a new closed button and adjusted the button styles needs further styling">
       <change beforePath="$PROJECT_DIR$/Attack On Titan Utopia.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Attack On Titan Utopia.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/game/gui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/gui/View.java" afterDir="false" />
     </list>
@@ -21,6 +21,7 @@
       <list>
         <option value="module-info" />
         <option value="CSS File" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -56,36 +57,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.View (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.View.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Legacy Library&quot;: &quot;Legacy library depends on IDE installation&quot;,
-    &quot;Notification.DoNotAsk-Legacy Library&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;updating-game-over-and-exceptions-alerts&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/joman/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.View (1).executor": "Run",
+    "Application.View.executor": "Run",
+    "Application.test.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Legacy Library": "Legacy library depends on IDE installation",
+    "Notification.DoNotAsk-Legacy Library": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "updating-game-over-and-exceptions-alerts",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/joman/Downloads/sdk intellj/javafx-sdk-22.0.2/lib/javafx.swing.jar",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.tools",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Yehia\Documents\CS3\IntelliJ\Attack On Titan Utopia\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.View">
+  <component name="RunManager">
     <configuration name="View (1)" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.gui.View" />
       <module name="M2 Solution" />
@@ -172,7 +174,9 @@
       <workItem from="1725120009746" duration="1270000" />
       <workItem from="1725816876304" duration="1588000" />
       <workItem from="1725836936002" duration="611000" />
-      <workItem from="1726253880241" duration="2948000" />
+      <workItem from="1726253880241" duration="3784000" />
+      <workItem from="1726591623582" duration="314000" />
+      <workItem from="1726672815035" duration="4327000" />
     </task>
     <task id="LOCAL-00001" summary="Added Functional Settings Buttons - Remaining Actual CSS Buttons Styles To Be Added">
       <option name="closed" value="true" />
@@ -270,7 +274,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725121242989</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="closed the title bar of the alert stage and added a new closed button and adjusted the button styles needs further styling">
+      <option name="closed" value="true" />
+      <created>1726257657082</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1726257657082</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +329,7 @@
     <MESSAGE value="progress bars added still need adjustment" />
     <MESSAGE value="progress bars adjusted fixed the exception thrown and made the colossal spawn in the lane perfectly not outside the lanes" />
     <MESSAGE value="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted the progress bars of the lanes and hard is finished ,speed of titans is faster, i commented the old methods will remove them later." />
+    <MESSAGE value="closed the title bar of the alert stage and added a new closed button and adjusted the button styles needs further styling" />
+    <option name="LAST_COMMIT_MESSAGE" value="closed the title bar of the alert stage and added a new closed button and adjusted the button styles needs further styling" />
   </component>
 </project>
