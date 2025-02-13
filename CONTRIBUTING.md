@@ -82,4 +82,4 @@ Feel free to give credit where it’s due:
 
 ---
 
-We’re excited to see your contributions and help make **Attack On Titan: Utopia** even better! If you have any questions or need assistance, don't hesitate to reach out to the project owners at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com). Happy coding!
+We’re excited to see your contributions and help make **Attack On Titan: Utopia** even better! If you have any questions or need assistance, don't hesitate to reach out to the project maintainers at [yehiarasheed@gmail.com](mailto:yehiarasheed@gmail.com). Happy coding!
